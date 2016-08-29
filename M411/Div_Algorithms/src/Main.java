@@ -1,26 +1,19 @@
+/**
+ * Taking a closer look at the methods might result in serious brain injury
+ */
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /*
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("String Input");
-        String userInput = scanner.next();
-        int[] sortArray = new int[userInput.length()];
-        for (int i = 0; i < userInput.length(); i++){
-            sortArray[i] = (int)userInput.charAt(i);
-        }
-        long a = 0;
-        int[] output = radixSortLSD(sortArray);
-        for (int i = 0; i < output.length; i++){
-            a = i;
-        }
-        System.out.println(a);
-        */
+        System.out.println("--RADIX SORT LSD--");
+        radixSortLSD();
+        System.out.println();
+        System.out.println("--BUBBLE SORT--");
         bubbleSort();
     }
 
-    public static void bubbleSort() {
+    private static void bubbleSort() {
         double[] userInput = new double[100000000];
         String userEingabe;
         Scanner zuSortieren = new Scanner(System.in);
@@ -50,10 +43,14 @@ public class Main {
             System.out.print((char) userInput[a + 1]);
         }
         System.out.println();
-        System.out.println("Elapsed Time: " + estimatedTime);
+        if (estimatedTime < 1){
+            System.out.println("Elapsed Time: < 1ms");
+        } else {
+            System.out.println("Elapsed Time: " + estimatedTime + "ms");
+        }
     }
 
-    private static void searchLowestValue(int flag) {
+    private static void searchForValue(int flag) {
         //if flag = 1 : search for lowest value
         //if flag = 0 : search for highest value
 
@@ -90,7 +87,16 @@ public class Main {
         }
     }
 
-    public static int[] radixSortLSD(int[] old) {
+    private static void radixSortLSD() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("String Input");
+        String userInput = scanner.next();
+        System.out.println("Chars " + userInput.length());
+        int[] old = new int[userInput.length()];
+        for (int i = 0; i < userInput.length(); i++){
+            old[i] = (int)userInput.charAt(i);
+        }
+
         long startTime = System.currentTimeMillis();
         for (int shift = Integer.SIZE - 1; shift > -1; shift--) {
             int[] tmp = new int[old.length];
@@ -99,7 +105,7 @@ public class Main {
             for (int i = 0; i < old.length; i++) {
                 boolean move = old[i] << shift >= 0;
 
-                if (shift == 0 ? !move : move) {
+                if ((0 == shift) != move) {
                     tmp[j] = old[i];
                     j++;
                 } else {
@@ -107,16 +113,18 @@ public class Main {
                 }
             }
 
-            for (int i = j; i < tmp.length; i++) {
-                tmp[i] = old[i - j];
-            }
-
+            System.arraycopy(old, 0, tmp, j, tmp.length - j);
             old = tmp;
         }
-        long estimatedTime = System.currentTimeMillis() - startTime;
-        System.out.print("Elapsed Time " + estimatedTime + "ms");
+        for (int value : old)
+            System.out.print((char)value);
         System.out.println();
-        return old;
+        long estimatedTime = System.currentTimeMillis() - startTime;
+        if (estimatedTime < 1){
+            System.out.println("Elapsed Time: < 1ms");
+        } else {
+            System.out.println("Elapsed Time: " + estimatedTime + "ms");
+        }
     }
 }
 
