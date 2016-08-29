@@ -1,0 +1,12 @@
+Fabian;123;
+Fabian;123;
+Fabian;312;
+Fabian;1999;
+Fabian;1999;
+Fabian;123123123;
+Habibi;1930;
+DennisSchäppi;1800;
+Fabian;123123;
+Fabian;12399;
+Igro;2003;
+FabianBächli;1999;
