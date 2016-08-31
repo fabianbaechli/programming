@@ -6,11 +6,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         System.out.println("--RADIX SORT LSD--");
         radixSortLSD();
         System.out.println();
         System.out.println("--BUBBLE SORT--");
-        bubbleSort();
+        bubbleSort();*/
+        GUI gui = new GUI();
+        gui.mainGui();
     }
 
     private static void bubbleSort() {
@@ -26,6 +29,7 @@ public class Main {
             userInput[a] = (int) userEingabe.charAt(a);
             temp = a;
         }
+        temp++;
         System.out.println("Chars: " + temp);
 
         long startTime = System.currentTimeMillis();
@@ -50,6 +54,7 @@ public class Main {
         }
     }
 
+    /*
     private static void searchForValue(int flag) {
         //if flag = 1 : search for lowest value
         //if flag = 0 : search for highest value
@@ -86,6 +91,7 @@ public class Main {
             System.out.println("Highest value: " + (char) value);
         }
     }
+    */
 
     private static void radixSortLSD() {
         Scanner scanner = new Scanner(System.in);
