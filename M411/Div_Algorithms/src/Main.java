@@ -1,36 +1,28 @@
-/**
- * Taking a closer look at the methods might result in serious brain injury
- */
-
-import java.util.Scanner;
+import javax.swing.*;
+import java.util.*;
+import java.lang.*;
+import java.io.*;
 
 public class Main {
+    private static String inputFilePath = "/Users/Fabian/Documents/GitHub/school/M411/Div_Algorithms/out/production/Div_Algorithms/inputfile.txt";
+    private static String outputFilePath = "/Users/Fabian/Documents/GitHub/school/M411/Div_Algorithms/out/production/Div_Algorithms/outputfile.txt";
+
     public static void main(String[] args) {
-        /*
-        System.out.println("--RADIX SORT LSD--");
-        radixSortLSD();
-        System.out.println();
-        System.out.println("--BUBBLE SORT--");
-        bubbleSort();*/
-        GUI gui = new GUI();
-        gui.mainGui();
+        /*TODO
+          More sorting algorithms
+         */
+        GUI.mainGui();
     }
 
-    private static void bubbleSort() {
-        double[] userInput = new double[100000000];
-        String userEingabe;
-        Scanner zuSortieren = new Scanner(System.in);
-        double var;
-
-        System.out.println("Input String");
-        userEingabe = zuSortieren.next();
-        long temp = 0;
-        for (int a = 0; a < userEingabe.length(); a++) {
-            userInput[a] = (int) userEingabe.charAt(a);
-            temp = a;
+    static long bubbleSort(JButton[] buttonsToDisable, JLabel progressLabel) {
+        for (JButton buttons : buttonsToDisable)
+            buttons.setEnabled(false);
+        String userEingabe = readFile(inputFilePath);
+        int[] userInput = new int[userEingabe.length() + 1];
+        int var;
+        for (int i = 0; i < userEingabe.length(); i++){
+            userInput[i] = userEingabe.charAt(i);
         }
-        temp++;
-        System.out.println("Chars: " + temp);
 
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < userEingabe.length(); i++) {
@@ -42,6 +34,7 @@ public class Main {
                 }
             }
         }
+
         long estimatedTime = System.currentTimeMillis() - startTime;
         for (int a = 0; a < userEingabe.length(); a++) {
             System.out.print((char) userInput[a + 1]);
@@ -52,52 +45,16 @@ public class Main {
         } else {
             System.out.println("Elapsed Time: " + estimatedTime + "ms");
         }
+        writeFile(outputFilePath, userInput);
+        for (JButton buttons : buttonsToDisable)
+            buttons.setEnabled(true);
+        return estimatedTime;
     }
 
-    /*
-    private static void searchForValue(int flag) {
-        //if flag = 1 : search for lowest value
-        //if flag = 0 : search for highest value
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Input String");
-        String userInput = scanner.next();
-        int[] sort = new int[userInput.length()];
-
-        for (int a = 0; a < userInput.length(); a++) {
-            sort[a] = (int) userInput.charAt(a);
-        }
-
-        int value = 0;
-        if (flag == 1) {
-            value = 10000000;
-        }
-
-        for (int aSort : sort) {
-            if (flag == 1) {
-                if (value > aSort) {
-                    value = aSort;
-                }
-            }
-            if (flag == 0) {
-                if (value < aSort) {
-                    value = aSort;
-                }
-            }
-        }
-        if (flag == 1) {
-            System.out.println("Lowest value: " + (char) value);
-        } else {
-            System.out.println("Highest value: " + (char) value);
-        }
-    }
-    */
-
-    private static void radixSortLSD() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("String Input");
-        String userInput = scanner.next();
-        System.out.println("Chars " + userInput.length());
+    static long radixSortLSD(JButton[] buttonsToDisable, JLabel progressLabel) {
+        for (JButton buttons : buttonsToDisable)
+            buttons.setEnabled(false);
+        String userInput = readFile(inputFilePath);
         int[] old = new int[userInput.length()];
         for (int i = 0; i < userInput.length(); i++){
             old[i] = (int)userInput.charAt(i);
@@ -118,7 +75,6 @@ public class Main {
                     old[i - j] = old[i];
                 }
             }
-
             System.arraycopy(old, 0, tmp, j, tmp.length - j);
             old = tmp;
         }
@@ -130,6 +86,42 @@ public class Main {
             System.out.println("Elapsed Time: < 1ms");
         } else {
             System.out.println("Elapsed Time: " + estimatedTime + "ms");
+        }
+        writeFile(outputFilePath, old);
+        for (JButton buttons : buttonsToDisable)
+            buttons.setEnabled(true);
+        return estimatedTime;
+    }
+
+    private static String readFile(String filePath){
+        String unsortedString = "";
+        try {
+            File file = new File(filePath);
+            Scanner scanner = new Scanner(file);
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                unsortedString = unsortedString + line;
+            }
+            scanner.close();
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
+        System.out.println(unsortedString);
+        return unsortedString;
+    }
+
+    private static void writeFile(String filePath, int[] sortedArray){
+        try{
+            FileWriter fileWriter = new FileWriter(filePath);
+            for (int value : sortedArray){
+                fileWriter.write((char)value);
+            }
+            fileWriter.close();
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
         }
     }
 }
