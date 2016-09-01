@@ -9,12 +9,13 @@ public class Main {
 
     public static void main(String[] args) {
         /*TODO
-          More sorting algorithms
+         * More sorting algorithms
+         * Correct text change of JLabel
          */
         GUI.mainGui();
     }
 
-    static long bubbleSort(JButton[] buttonsToDisable, JLabel progressLabel) {
+    static void bubbleSort(JButton[] buttonsToDisable, JLabel progressLabel) {
         for (JButton buttons : buttonsToDisable)
             buttons.setEnabled(false);
         String userEingabe = readFile(inputFilePath);
@@ -23,6 +24,7 @@ public class Main {
         for (int i = 0; i < userEingabe.length(); i++){
             userInput[i] = userEingabe.charAt(i);
         }
+        progressLabel.setText("Chars: " + userInput.length);
 
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < userEingabe.length(); i++) {
@@ -36,22 +38,14 @@ public class Main {
         }
 
         long estimatedTime = System.currentTimeMillis() - startTime;
-        for (int a = 0; a < userEingabe.length(); a++) {
-            System.out.print((char) userInput[a + 1]);
-        }
-        System.out.println();
-        if (estimatedTime < 1){
-            System.out.println("Elapsed Time: < 1ms");
-        } else {
-            System.out.println("Elapsed Time: " + estimatedTime + "ms");
-        }
         writeFile(outputFilePath, userInput);
         for (JButton buttons : buttonsToDisable)
             buttons.setEnabled(true);
-        return estimatedTime;
+
+        labelTime(estimatedTime, progressLabel);
     }
 
-    static long radixSortLSD(JButton[] buttonsToDisable, JLabel progressLabel) {
+    static void radixSortLSD(JButton[] buttonsToDisable, JLabel progressLabel) {
         for (JButton buttons : buttonsToDisable)
             buttons.setEnabled(false);
         String userInput = readFile(inputFilePath);
@@ -59,6 +53,7 @@ public class Main {
         for (int i = 0; i < userInput.length(); i++){
             old[i] = (int)userInput.charAt(i);
         }
+        progressLabel.setText("Chars: " + old.length);
 
         long startTime = System.currentTimeMillis();
         for (int shift = Integer.SIZE - 1; shift > -1; shift--) {
@@ -78,19 +73,13 @@ public class Main {
             System.arraycopy(old, 0, tmp, j, tmp.length - j);
             old = tmp;
         }
-        for (int value : old)
-            System.out.print((char)value);
-        System.out.println();
         long estimatedTime = System.currentTimeMillis() - startTime;
-        if (estimatedTime < 1){
-            System.out.println("Elapsed Time: < 1ms");
-        } else {
-            System.out.println("Elapsed Time: " + estimatedTime + "ms");
-        }
+
         writeFile(outputFilePath, old);
         for (JButton buttons : buttonsToDisable)
             buttons.setEnabled(true);
-        return estimatedTime;
+
+        labelTime(estimatedTime, progressLabel);
     }
 
     private static String readFile(String filePath){
@@ -108,7 +97,6 @@ public class Main {
         catch (Exception ex){
             ex.printStackTrace();
         }
-        System.out.println(unsortedString);
         return unsortedString;
     }
 
@@ -122,6 +110,14 @@ public class Main {
         }
         catch (Exception ex){
             ex.printStackTrace();
+        }
+    }
+
+    private static void labelTime(double time, JLabel label){
+        if (time < 1){
+            label.setText("<html><div style='text-align: center;'>Sorting Process Complete!<br>Estimated time: &#60 1ms</html>");
+        } else {
+            label.setText("<html><div style='text-align: center;'> Sorting Process Complete!<br>" + "Estimated time: " + time + "ms</html>");
         }
     }
 }

@@ -5,7 +5,7 @@ class GUI {
         JFrame guiFrame = new JFrame();
 
         /*TODO
-          Some kind of feedback concerning the sorting progress
+         * Some kind of feedback concerning the sorting progress
          */
         guiFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         guiFrame.setTitle("Sorting algorithms");
@@ -36,22 +36,14 @@ class GUI {
 
         //Radix Sort LSD button press
         radixSortButton.addActionListener(event -> {
-            long time = Main.radixSortLSD(buttons, infoText);
-            if (time < 1){
-                infoText.setText("<html><div style='text-align: center;'>Sorting Process Complete!<br>Estimated time: &#60 1ms</html>");
-            } else {
-                infoText.setText("<html><div style='text-align: center;'> Sorting Process Complete!<br>" + "Estimated time: " + time + "ms</html>");
-            }
+            infoPane.setVisible(false);
+            Main.radixSortLSD(buttons, infoText);
+
         });
 
         //Bubblesort button press
         bubblesortButton.addActionListener(event -> {
-            long time = Main.bubbleSort(buttons, infoText);
-            if (time < 1){
-                infoText.setText("<html><div style='text-align: center;'>Sorting Process Complete!<br>Estimated time: &#60 1ms</html>");
-            } else {
-                infoText.setText("<html><div style='text-align: center;'> Sorting Process Complete!<br>" + "Estimated time: " + time + "ms</html>");
-            }
+            Main.bubbleSort(buttons, infoText);
         });
 
         //Readme button press
