@@ -24,7 +24,12 @@ public class Main {
         for (int i = 0; i < userEingabe.length(); i++){
             userInput[i] = userEingabe.charAt(i);
         }
-        progressLabel.setText("Chars: " + userInput.length);
+        int temp = 0;
+        String labelString = ("<html><div style='text-align: center;'>"
+                + "--In Progress--" + "<br> Chars: "
+                + userEingabe.length()
+                +"<br> Chars Sorted: " + temp + "</html>");
+        progressLabel.setText(labelString);
 
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < userEingabe.length(); i++) {
@@ -34,6 +39,12 @@ public class Main {
                     userInput[c] = userInput[c + 1];
                     userInput[c + 1] = var;
                 }
+                temp = i;
+                labelString = ("<html><div style='text-align: center;'>"
+                        + "--In Progress--" + "<br> Chars: "
+                        + userEingabe.length()
+                        +"<br> Chars Sorted: " + temp + "</html>");
+                progressLabel.setText(labelString);
             }
         }
 
@@ -53,7 +64,12 @@ public class Main {
         for (int i = 0; i < userInput.length(); i++){
             old[i] = (int)userInput.charAt(i);
         }
-        progressLabel.setText("Chars: " + old.length);
+        int temp = 0;
+        String labelString = ("<html><div style='text-align: center;'>"
+                + "--In Progress--" + "<br> Chars: "
+                + userInput.length()
+                +"<br> Chars Sorted: " + temp + "</html>");
+        progressLabel.setText(labelString);
 
         long startTime = System.currentTimeMillis();
         for (int shift = Integer.SIZE - 1; shift > -1; shift--) {

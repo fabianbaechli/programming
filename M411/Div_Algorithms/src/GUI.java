@@ -36,14 +36,24 @@ class GUI {
 
         //Radix Sort LSD button press
         radixSortButton.addActionListener(event -> {
-            infoPane.setVisible(false);
-            Main.radixSortLSD(buttons, infoText);
-
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Main.radixSortLSD(buttons, infoText);
+                }
+            });
+            t.start();
         });
 
         //Bubblesort button press
         bubblesortButton.addActionListener(event -> {
-            Main.bubbleSort(buttons, infoText);
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Main.bubbleSort(buttons, infoText);
+                }
+            });
+            t.start();
         });
 
         //Readme button press
