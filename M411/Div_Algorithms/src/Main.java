@@ -16,15 +16,14 @@ public class Main {
     }
 
     static void bubbleSort(JButton[] buttonsToDisable, JLabel progressLabel) {
-        for (JButton buttons : buttonsToDisable)
-            buttons.setEnabled(false);
+        for(JButton buttons : buttonsToDisable) buttons.setEnabled(false);
         String userEingabe = readFile(inputFilePath);
         int[] userInput = new int[userEingabe.length() + 1];
         int var;
         for (int i = 0; i < userEingabe.length(); i++){
             userInput[i] = userEingabe.charAt(i);
         }
-        int temp = 0;
+        int temp = 1;
         String labelString = ("<html><div style='text-align: center;'>"
                 + "--In Progress--" + "<br> Chars: "
                 + userEingabe.length()
@@ -43,7 +42,7 @@ public class Main {
                 labelString = ("<html><div style='text-align: center;'>"
                         + "--In Progress--" + "<br> Chars: "
                         + userEingabe.length()
-                        +"<br> Chars Sorted: " + temp + "</html>");
+                        +"<br>Chars sorted: " + temp + "</html>");
                 progressLabel.setText(labelString);
             }
         }
