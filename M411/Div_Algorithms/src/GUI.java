@@ -1,6 +1,11 @@
 import java.awt.*;
 import javax.swing.*;
+import java.lang.*;
+
 class GUI {
+    private static String inputFilePath = "/Users/Fabian/Documents/GitHub/school/M411/Div_Algorithms/out/production/Div_Algorithms/inputfile.txt";
+    private static String outputFilePath = "/Users/Fabian/Documents/GitHub/school/M411/Div_Algorithms/out/production/Div_Algorithms/outputfile.txt";
+
     static void mainGui(){
         JFrame guiFrame = new JFrame();
 
@@ -9,23 +14,24 @@ class GUI {
          */
         guiFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         guiFrame.setTitle("Sorting algorithms");
-        guiFrame.setMinimumSize(new Dimension(450, 150));
+        guiFrame.setMinimumSize(new Dimension(500, 150));
         guiFrame.setMaximumSize(new Dimension(600, 300));
         guiFrame.setLocationRelativeTo(null);
 
-        JButton radixSortButton = new JButton(" Radix Sort LSD");
+        JButton radixSortButton = new JButton("Radix Sort LSD");
+        JButton quickSort = new JButton("Quicksort");
         JButton bubblesortButton = new JButton("Bubblesort");
         JButton readmeButton = new JButton("Readme");
-        radixSortButton.setSize(30, 40);
-        bubblesortButton.setSize(30, 40);
-        readmeButton.setSize(30,40);
-        JButton[] buttons = new JButton[3];
+
+        JButton[] buttons = new JButton[4];
         buttons[0] = radixSortButton;
         buttons[1] = bubblesortButton;
         buttons[2] = readmeButton;
+        buttons[3] = quickSort;
 
         JPanel buttonPane = new JPanel();
         buttonPane.add(radixSortButton);
+        buttonPane.add(quickSort);
         buttonPane.add(bubblesortButton);
         buttonPane.add(readmeButton);
         buttonPane.setBorder(BorderFactory.createEmptyBorder(0, 0, 5, 0));
@@ -38,6 +44,29 @@ class GUI {
         radixSortButton.addActionListener(event -> {
             Thread t = new Thread(() -> Main.radixSortLSD(buttons, infoText));
             t.start();
+        });
+
+        //Quick Sort Button Press
+        quickSort.addActionListener(event -> {
+            for (JButton button : buttons)
+                button.setEnabled(false);
+            String userInput = Main.readFile(inputFilePath);
+            int[] arr = new int[userInput.length()];
+
+            for (int i = 0; i < userInput.length(); i++) {
+                arr[i] = (int)userInput.charAt(i);
+            }
+
+            long startTime = System.currentTimeMillis();
+            Thread t = new Thread(() -> Main.quickSort(arr, 0, arr.length - 1));
+            t.start();
+            long estimatedTime = System.currentTimeMillis() - startTime;
+
+            for (JButton button : buttons)
+                button.setEnabled(true);
+
+            Main.writeFile(outputFilePath, arr);
+            Main.labelTime(estimatedTime, infoText);
         });
 
         //Bubblesort button press

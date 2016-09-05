@@ -39,10 +39,10 @@ public class Main {
                     userInput[c + 1] = var;
                 }
                 temp = i;
-                labelString = ("<html><div style='text-align: center;'>"
-                        + "--In Progress--" + "<br> Chars: "
-                        + userEingabe.length()
-                        +"<br>Chars sorted: " + temp + "</html>");
+                labelString = ("<html><div style='text-align: center;'>" +
+                        "--In Progress--" + "<br> Chars: " +
+                        userEingabe.length() +
+                        "<br>Chars sorted: " + temp + "</html>");
                 progressLabel.setText(labelString);
             }
         }
@@ -63,11 +63,9 @@ public class Main {
         for (int i = 0; i < userInput.length(); i++){
             old[i] = (int)userInput.charAt(i);
         }
-        int temp = 0;
-        String labelString = ("<html><div style='text-align: center;'>"
-                + "--In Progress--" + "<br> Chars: "
-                + userInput.length()
-                +"<br> Chars Sorted: " + temp + "</html>");
+        String labelString = ("<html><div style='text-align: center;'>" +
+                "--In Progress--" + "<br> Chars: " +
+                userInput.length() + "</html>");
         progressLabel.setText(labelString);
 
         long startTime = System.currentTimeMillis();
@@ -97,7 +95,7 @@ public class Main {
         labelTime(estimatedTime, progressLabel);
     }
 
-    private static String readFile(String filePath){
+    static String readFile(String filePath){
         String unsortedString = "";
         try {
             File file = new File(filePath);
@@ -115,7 +113,7 @@ public class Main {
         return unsortedString;
     }
 
-    private static void writeFile(String filePath, int[] sortedArray){
+    static void writeFile(String filePath, int[] sortedArray){
         try{
             FileWriter fileWriter = new FileWriter(filePath);
             for (int value : sortedArray){
@@ -128,12 +126,65 @@ public class Main {
         }
     }
 
-    private static void labelTime(double time, JLabel label){
+    static void labelTime(double time, JLabel label){
         if (time < 1){
-            label.setText("<html><div style='text-align: center;'>Sorting Process Complete!<br>Estimated time: &#60 1ms</html>");
+            label.setText("<html><div style='text-align: center;'>Sorting Process Complete!" +
+                    "<br>Estimated time: &#60 1ms" +
+                    "<br>Input File MD5 Hash: " +md5()[0]+
+                    "<br>Output File MD5 Hash: " +md5()[1]+"</html>");
         } else {
-            label.setText("<html><div style='text-align: center;'> Sorting Process Complete!<br>" + "Estimated time: " + time + "ms</html>");
+            label.setText("<html><div style='text-align: center;'>Sorting Process Complete!" +
+                    "<br>Estimated time: " +time +
+                    "<br>Input File MD5 Hash: " +md5()[0]+
+                    "<br>Output File MD5 Hash: " +md5()[1]+"</html>");
         }
+    }
+
+    private static String[] md5(){
+        //MD5 of input file on index 1
+        //MD5 of output file on index 2
+        String md5[] = new String[2];
+        try {
+            FileInputStream fis1 = new FileInputStream(new File(inputFilePath));
+            md5[0] = org.apache.commons.codec.digest.DigestUtils.md5Hex(fis1);
+            fis1.close();
+            FileInputStream fis2 = new FileInputStream(new File(outputFilePath));
+            md5[1] = org.apache.commons.codec.digest.DigestUtils.md5Hex(fis2);
+            fis2.close();
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return md5;
+    }
+
+    static private long partition(int arr[], long left, long right) {
+        long i = left, j = right;
+        long tmp;
+        long pivot = arr[((int)left + (int)right) / 2];
+
+        while (i <= j) {
+            while (arr[(int)i] < pivot)
+                i++;
+            while (arr[(int)j] > pivot)
+                j--;
+            if (i <= j) {
+                tmp = arr[(int)i];
+                arr[(int)i] = arr[(int)j];
+                arr[(int)j] = (int)tmp;
+                i++;
+                j--;
+            }
+        }
+        return i;
+    }
+
+    static void quickSort(int arr[], long left, long right) {
+        long index = partition(arr, left, right);
+        if (left < index - 1)
+            quickSort(arr, left, index - 1);
+        if (index < right)
+            quickSort(arr, index, right);
     }
 }
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane prefHeight="150.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <BorderPane prefHeight="268.0" prefWidth="305.0">
+         <bottom>
+            <Label fx:id="label1" text="Label" BorderPane.alignment="CENTER" />
+         </bottom>
+         <right>
+            <Button fx:id="button1" mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+         </right>
+         <left>
+            <Button fx:id="button2" mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <Button fx:id="button3" mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <TextArea fx:id="textArea1" prefHeight="52.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </top>
+      </BorderPane>
+   </children>
+</StackPane>
