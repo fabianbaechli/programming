@@ -7,8 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
-
-
 public class Controller
         implements Initializable {
 
@@ -23,11 +21,15 @@ public class Controller
         // Code Goes Here
         button1.setOnAction(event -> {
 
-            //-- Char Count here
             String userInput = textArea1.getText();
             HashMap<Character, Integer> hashMap = new HashMap<>();
 
-            for(int i = 0; i < userInput.length(); i++) {
+            label1.setText("");
+            label2.setText("");
+            label3.setText("");
+            label4.setText("");
+
+            for (int i = 0; i < userInput.length(); i++) {
                 Character reference = userInput.charAt(i);
                 Integer check = hashMap.get(reference);
                 if (check == null) {
@@ -110,5 +112,31 @@ public class Controller
             }
             hashMap.clear();
         });
+    }
+    public static int[] radixSortLSD(int[] old) {
+        long startTime = System.currentTimeMillis();
+        for (int shift = Integer.SIZE - 1; shift > -1; shift--) {
+            int[] tmp = new int[old.length];
+            int j = 0;
+
+            for (int i = 0; i < old.length; i++) {
+                boolean move = old[i] << shift >= 0;
+
+                if ((shift == 0) != move) {
+                    tmp[j] = old[i];
+                    j++;
+                } else {
+                    old[i - j] = old[i];
+                }
+            }
+
+            System.arraycopy(old, 0, tmp, j, tmp.length - j);
+
+            old = tmp;
+        }
+        long estimatedTime = System.currentTimeMillis() - startTime;
+        System.out.print("Elapsed Time " + estimatedTime + "ms");
+        System.out.println();
+        return old;
     }
 }

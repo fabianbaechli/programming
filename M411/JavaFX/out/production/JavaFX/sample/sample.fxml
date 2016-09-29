@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane prefHeight="381.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <children>
-      <BorderPane prefHeight="252.0" prefWidth="381.0">
-         <center>
-            <Button fx:id="button1" mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
-         </center>
-         <top>
-            <TextArea fx:id="textArea1" prefHeight="141.0" prefWidth="509.0" promptText="Input here..." BorderPane.alignment="CENTER">
-               <font>
-                  <Font name="Roboto Light" size="13.0" />
-               </font></TextArea>
-         </top>
-         <bottom>
-            <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Label fx:id="label1" alignment="CENTER" contentDisplay="CENTER" prefHeight="200.0" prefWidth="127.0" />
-                  <Label fx:id="label2" alignment="CENTER" contentDisplay="CENTER" prefHeight="200.0" prefWidth="127.0" />
-                  <Label fx:id="label3" alignment="CENTER" contentDisplay="CENTER" prefHeight="200.0" prefWidth="127.0" />
-                  <Label fx:id="label4" alignment="CENTER" contentDisplay="CENTER" prefHeight="200.0" prefWidth="127.0" />
-               </children>
-            </FlowPane>
-         </bottom>
-      </BorderPane>
-   </children>
+<StackPane prefHeight="381.0" prefWidth="509.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="sample.Controller">
+   <BorderPane prefHeight="252.0" prefWidth="381.0">
+      <center>
+         <Button fx:id="button1" mnemonicParsing="false" text="Analyse Text" BorderPane.alignment="CENTER"/>
+      </center>
+      <top>
+         <TextArea fx:id="textArea1" prefHeight="141.0" prefWidth="509.0" promptText="Input here..." BorderPane.alignment="CENTER">
+            <font>
+               <Font name="Roboto Light" size="13.0"/>
+            </font>
+         </TextArea>
+      </top>
+      <bottom>
+         <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <Label fx:id="label1" alignment="CENTER" contentDisplay="CENTER" prefHeight="200.0" prefWidth="127.0"/>
+            <Label fx:id="label2" alignment="CENTER" contentDisplay="CENTER" prefHeight="200.0" prefWidth="127.0"/>
+            <Label fx:id="label3" alignment="CENTER" contentDisplay="CENTER" prefHeight="200.0" prefWidth="127.0"/>
+            <Label fx:id="label4" alignment="CENTER" contentDisplay="CENTER" prefHeight="200.0" prefWidth="127.0"/>
+         </FlowPane>
+      </bottom>
+   </BorderPane>
 </StackPane>

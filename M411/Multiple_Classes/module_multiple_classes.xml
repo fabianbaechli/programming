@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_multiple_classes" default="compile.module.multiple_classes">
+  <dirname property="module.multiple_classes.basedir" file="${ant.file.module_multiple_classes}"/>
+  
+  <property name="module.jdk.home.multiple_classes" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.multiple_classes" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.multiple_classes" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.multiple_classes" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="multiple_classes.output.dir" value="${module.multiple_classes.basedir}/out/production/Multiple_Classes"/>
+  <property name="multiple_classes.testoutput.dir" value="${module.multiple_classes.basedir}/out/test/Multiple_Classes"/>
+  
+  <path id="multiple_classes.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="multiple_classes.module.production.classpath">
+    <path refid="${module.jdk.classpath.multiple_classes}"/>
+  </path>
+  
+  <path id="multiple_classes.runtime.production.module.classpath">
+    <pathelement location="${multiple_classes.output.dir}"/>
+  </path>
+  
+  <path id="multiple_classes.module.classpath">
+    <path refid="${module.jdk.classpath.multiple_classes}"/>
+    <pathelement location="${multiple_classes.output.dir}"/>
+  </path>
+  
+  <path id="multiple_classes.runtime.module.classpath">
+    <pathelement location="${multiple_classes.testoutput.dir}"/>
+    <pathelement location="${multiple_classes.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.multiple_classes">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.multiple_classes">
+    <patternset refid="excluded.from.module.multiple_classes"/>
+  </patternset>
+  
+  <path id="multiple_classes.module.sourcepath">
+    <dirset dir="${module.multiple_classes.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.multiple_classes" depends="compile.module.multiple_classes.production,compile.module.multiple_classes.tests" description="Compile module Multiple_Classes"/>
+  
+  <target name="compile.module.multiple_classes.production" depends="register.custom.compilers" description="Compile module Multiple_Classes; production classes">
+    <mkdir dir="${multiple_classes.output.dir}"/>
+    <javac2 destdir="${multiple_classes.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.multiple_classes}/javac">
+      <compilerarg line="${compiler.args.multiple_classes}"/>
+      <bootclasspath refid="multiple_classes.module.bootclasspath"/>
+      <classpath refid="multiple_classes.module.production.classpath"/>
+      <src refid="multiple_classes.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.multiple_classes"/>
+    </javac2>
+    
+    <copy todir="${multiple_classes.output.dir}">
+      <fileset dir="${module.multiple_classes.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.multiple_classes.tests" depends="register.custom.compilers,compile.module.multiple_classes.production" description="compile module Multiple_Classes; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.multiple_classes" description="cleanup module">
+    <delete dir="${multiple_classes.output.dir}"/>
+    <delete dir="${multiple_classes.testoutput.dir}"/>
+  </target>
+</project>
