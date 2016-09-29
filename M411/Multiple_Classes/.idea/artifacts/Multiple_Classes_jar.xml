@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Multiple_Classes:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Multiple_Classes_jar</output-path>
+    <root id="archive" name="Multiple_Classes.jar">
+      <element id="module-output" name="Multiple_Classes" />
+    </root>
+  </artifact>
+</component>

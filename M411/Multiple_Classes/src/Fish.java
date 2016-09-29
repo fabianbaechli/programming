@@ -12,6 +12,7 @@ abstract class Fish extends LivingBeing{
         inWater = true;
         coldBlooded = true;
     }
+
     public String getKind() {
         return kind;
     }
