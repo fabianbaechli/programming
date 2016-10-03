@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<WakeOnLanConfig>
+
+    <Person Name="Em Hans Sin Laptop">
+        <Mac>12-12-12-12-12-12</Mac>
+    </Person>
+    <Person Name="Test">
+        <Mac>12-12-12-12-12-13</Mac>
+    </Person>
+</WakeOnLanConfig>
