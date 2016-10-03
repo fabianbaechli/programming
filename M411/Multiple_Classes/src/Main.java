@@ -1,6 +1,6 @@
 public class Main {
     public static void main (String[] args){
-        Nemo nemo = new Nemo(12, 0.05, "male", "nemo", "orange");
+        Nemo nemo = new Nemo(12, 0.05, "male", "nemo");
         nemo.breathe();
         ClassInspector.toString(nemo);
         System.out.println("");
@@ -14,7 +14,7 @@ public class Main {
         ClassInspector.toString(fabian);
 
         Object[] objectArray = {nemo, shark, fabian};
-        ClassInspector.incrementAge(objectArray, 1);
+        ClassInspector.incrementAge(objectArray, 10);
 
         ClassInspector.toString(nemo);
         System.out.println("");

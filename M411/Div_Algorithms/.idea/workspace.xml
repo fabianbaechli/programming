@@ -7,18 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5c667ce-a1c4-42f5-a288-24d4b8b1a914" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaFX/out/production/JavaFX/sample/Controller.class" afterPath="$PROJECT_DIR$/../JavaFX/out/production/JavaFX/sample/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaFX/out/production/JavaFX/sample/Main.class" afterPath="$PROJECT_DIR$/../JavaFX/out/production/JavaFX/sample/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../1/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../1/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../1/src/com/company/Test.java" afterPath="$PROJECT_DIR$/../1/src/com/company/Test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Multiple_Classes/out/artifacts/Multiple_Classes_jar/Multiple_Classes.jar" afterPath="$PROJECT_DIR$/../Multiple_Classes/out/artifacts/Multiple_Classes_jar/Multiple_Classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Multiple_Classes/out/production/Multiple_Classes/ClassInspector.class" afterPath="$PROJECT_DIR$/../Multiple_Classes/out/production/Multiple_Classes/ClassInspector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Multiple_Classes/out/production/Multiple_Classes/Fish.class" afterPath="$PROJECT_DIR$/../Multiple_Classes/out/production/Multiple_Classes/Fish.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Multiple_Classes/out/production/Multiple_Classes/Human.class" afterPath="$PROJECT_DIR$/../Multiple_Classes/out/production/Multiple_Classes/Human.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Multiple_Classes/out/production/Multiple_Classes/Main.class" afterPath="$PROJECT_DIR$/../Multiple_Classes/out/production/Multiple_Classes/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Multiple_Classes/out/production/Multiple_Classes/Nemo.class" afterPath="$PROJECT_DIR$/../Multiple_Classes/out/production/Multiple_Classes/Nemo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Multiple_Classes/out/production/Multiple_Classes/Shark.class" afterPath="$PROJECT_DIR$/../Multiple_Classes/out/production/Multiple_Classes/Shark.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Div_Algorithms/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/Div_Algorithms/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaFX/.idea/vcs.xml" afterPath="$PROJECT_DIR$/../JavaFX/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaFX/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JavaFX/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaFX/out/production/JavaFX/sample/sample.fxml" afterPath="$PROJECT_DIR$/../JavaFX/out/production/JavaFX/sample/sample.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaFX/src/sample/Controller.java" afterPath="$PROJECT_DIR$/../JavaFX/src/sample/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaFX/src/sample/Main.java" afterPath="$PROJECT_DIR$/../JavaFX/src/sample/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JavaFX/src/sample/sample.fxml" afterPath="$PROJECT_DIR$/../JavaFX/src/sample/sample.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Div_Algorithms/inputfile.txt" afterPath="$PROJECT_DIR$/out/production/Div_Algorithms/inputfile.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Div_Algorithms/outputfile.txt" afterPath="$PROJECT_DIR$/out/production/Div_Algorithms/outputfile.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Multiple_Classes/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Multiple_Classes/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Multiple_Classes/src/ClassInspector.java" afterPath="$PROJECT_DIR$/../Multiple_Classes/src/ClassInspector.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Multiple_Classes/src/Main.java" afterPath="$PROJECT_DIR$/../Multiple_Classes/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Multiple_Classes/src/Nemo.java" afterPath="$PROJECT_DIR$/../Multiple_Classes/src/Nemo.java" />
     </list>
     <ignored path="Div_Algorithms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,8 +45,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="131" column="34" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
+            <state relative-caret-position="211">
+              <caret line="99" column="13" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -103,7 +105,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="88" />
+    <option name="x" value="74" />
     <option name="y" value="22" />
     <option name="width" value="1352" />
     <option name="height" value="877" />
@@ -488,6 +490,8 @@
       <workItem from="1474911295223" duration="288000" />
       <workItem from="1475011259465" duration="102000" />
       <workItem from="1475040936280" duration="16000" />
+      <workItem from="1475166380154" duration="227000" />
+      <workItem from="1475214168555" duration="9000" />
     </task>
     <servers />
   </component>
@@ -521,10 +525,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="739000" />
+    <option name="totallyTimeSpent" value="975000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="88" y="22" width="1352" height="877" extended-state="0" />
+    <frame x="74" y="22" width="1352" height="877" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -986,8 +990,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="131" column="34" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
+        <state relative-caret-position="211">
+          <caret line="99" column="13" selection-start-line="99" selection-start-column="13" selection-end-line="99" selection-end-column="13" />
           <folding />
         </state>
       </provider>

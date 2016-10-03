@@ -6,6 +6,8 @@ public class Human extends Mammal {
 
     Human(int age, double weight, String gender, String name, String colorOfFur, String skinColor, String persuasion, String job){
         super();
+        this.kind = "human";
+        this.inWater = false;
         this.age = age;
         this.weight = weight;
         this.gender = gender;
@@ -14,8 +16,6 @@ public class Human extends Mammal {
         this.skinColor = skinColor;
         this.persuasion = persuasion;
         this.job = job;
-        this.kind = "human";
-        this.inWater = false;
     }
 
     public String getSkinColor() {
