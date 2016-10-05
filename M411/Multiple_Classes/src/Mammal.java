@@ -4,7 +4,7 @@ abstract class Mammal extends LivingBeing {
 
     @Override           //Because all mammals breathe through lungs
     public void breathe() {
-        System.out.println("☁ Breathing through lungs ☁");
+        System.out.println("-- Breathing through lungs --");
     }
 
     Mammal() {

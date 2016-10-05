@@ -1,9 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
 import java.util.Iterator;
-
 import org.json.*;
 
 public class Main {
@@ -15,7 +13,7 @@ public class Main {
         BufferedReader br = null;
         try {
             String line;
-            br = new BufferedReader(new FileReader("/Users/Fabian/Documents/GitHub/school/M411/JsonParser/src/input.json"));
+            br = new BufferedReader(new FileReader("/Users/Fabian/Desktop/mock_dat.json"));
             while ((line = br.readLine()) != null) {
                 jsonData += line + "\n";
             }

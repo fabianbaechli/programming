@@ -6,7 +6,28 @@
   }
 },
   "P2": {
-    "Name": "Fabian Bächli",
+    "Name": "Hansruedi sin Hund",
+    "Phone Number": {
+      "Home": "044 945 06 63",
+      "Mobile": "079 959 09 60"
+    }
+  },
+  "P3": {
+    "Name": "Peter und Claudia",
+    "Phone Number": {
+      "Home": "044 945 06 63",
+      "Mobile": "079 959 09 60"
+    }
+  },
+  "P4": {
+    "Name": "Friedrich Meier",
+    "Phone Number": {
+      "Home": "044 945 06 63",
+      "Mobile": "079 959 09 60"
+    }
+  },
+  "P5": {
+    "Name": "Hansli",
     "Phone Number": {
       "Home": "044 945 06 63",
       "Mobile": "079 959 09 60"

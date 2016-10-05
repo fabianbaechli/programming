@@ -4,7 +4,7 @@ abstract class Fish extends LivingBeing{
 
     @Override           //Because all fish breathe through grills
     public void breathe() {
-        System.out.println("☁ Breathing through grills ☁");
+        System.out.println("-- Breathing through grills --");
     }
 
     Fish() {

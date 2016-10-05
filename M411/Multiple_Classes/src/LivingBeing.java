@@ -7,10 +7,10 @@ abstract class LivingBeing {
     String name;
 
     public void breathe(){
-        System.out.println("☁ Breathing ☁");
+        System.out.println("-- Breathing --");
     }
     public void reproduce(){
-        System.out.println("⚤ Reproducing ⚤");
+        System.out.println("-- Reproducing --");
     }
     public void intakeOfFood(){
         System.out.println("-- Eating --");
