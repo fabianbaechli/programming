@@ -31,28 +31,11 @@ class ClassInspector {
         }
     }
     static void incrementAge(Object[] objectsToIncrement, int incrementValue) {
-        for (Object anObjectInObjectsToIncrement :objectsToIncrement) {
-            if (anObjectInObjectsToIncrement instanceof Nemo) {
-                ClassInspector.increment(Nemo.class, anObjectInObjectsToIncrement, incrementValue);
+        for(Object object : objectsToIncrement) {
+            if(object instanceof  LivingBeing) {
+                LivingBeing being = (LivingBeing) object;
+                being.setAge(being.getAge()+incrementValue);
             }
-            else if (anObjectInObjectsToIncrement instanceof Human){
-                ClassInspector.increment(Human.class, anObjectInObjectsToIncrement, incrementValue);
-            }
-            else if (anObjectInObjectsToIncrement instanceof Shark){
-                ClassInspector.increment(Shark.class, anObjectInObjectsToIncrement, incrementValue);
-            }
-        }
-    }
-    private static void increment(Class<? extends LivingBeing> objectClass, Object objectOfClass, int incrementValue){
-        try {
-            Method setMethod = objectClass.getMethod("setAge", int.class);
-            Method getMethod = objectClass. getMethod("getAge");
-            Object object = getMethod.invoke(objectOfClass);
-            Integer value = (Integer) object;
-            setMethod.invoke(objectOfClass, value + incrementValue);
-        }
-        catch(NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            System.out.println(e.toString());
         }
     }
 }
