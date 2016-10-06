@@ -2,10 +2,10 @@ import java.io.*;
 
 public class Main {
     private static int[] biggestNumbers = new int[6];
-    public static String[] headOfTable = new String[6];
+    private static String[] headOfTable = new String[6];
     public static void main (String[] args){
         String line;
-        String fileLocation = "/Users/Fabian/Documents/GitHub/school/M411/CSV_As_Table/MOCK_DATA.csv";
+        String fileLocation = "/Users/Fabian/Desktop/MOCK_DATA.csv";
         try (BufferedReader br = new BufferedReader(new FileReader(fileLocation))) {
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
@@ -38,7 +38,6 @@ public class Main {
         }
     }
     private static void drawTable (){
-
         for(int i = 0; i < 6; i++){
             headOfTable[i] = "+";
             for (int p = 0; p < biggestNumbers[i]; p++){
@@ -75,7 +74,8 @@ public class Main {
         for (int p = 0; p < biggestNumbers[5] - 5; p++){
             whitespaces[5] = whitespaces[5] + " ";
         }
-        System.out.format("%n| ID " + whitespaces[0] + "| First Name" + whitespaces[1] + "| Last Name" + whitespaces[2] + "| Email " + whitespaces[3] + "| Gender" + whitespaces[4] + "| IP Address" + whitespaces[5] + "| %n");
+        System.out.format("%n| ID " + whitespaces[0] + "| First Name" + whitespaces[1] + "| Last Name" + whitespaces[2]
+                + "| Email " + whitespaces[3] + "| Gender" + whitespaces[4] + "| IP Address" + whitespaces[5] + "| %n");
         for (String aStringInHeader : headOfTable)
             System.out.format(aStringInHeader);
         System.out.println();
