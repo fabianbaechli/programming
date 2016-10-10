@@ -1,4 +1,3 @@
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 class ClassInspector {
 
@@ -20,6 +19,7 @@ class ClassInspector {
                 keyWord = "Shark.";
             }
 
+            assert methodsOfClass != null;
             for (Method aMethodOfMethodsOfClass : methodsOfClass) {
                 String splitArray = aMethodOfMethodsOfClass.toString().split(keyWord)[1];
                 if (splitArray.startsWith("get")){

@@ -50,30 +50,15 @@ public class Main {
             System.out.print(headOfTable[i]);
         }
         String[] whitespaces = new String[6];
-        whitespaces[0] = "";
-        for (int p = 0; p < biggestNumbers[0] + 2; p++){
-            whitespaces[0] = whitespaces[0] + " ";
+        int[] numbers = {2, -5, -4, -1, -1, -5};
+
+        for (int i = 0; i < 6; i++){
+            whitespaces[i] = "";
+            for (int p = 0; p < biggestNumbers[i] + numbers[i] ; p++) {
+                whitespaces[i] = whitespaces[i] + " ";
+            }
         }
-        whitespaces[1] = "";
-        for (int p = 0; p < biggestNumbers[1] - 5; p++){
-            whitespaces[1] = whitespaces[1] + " ";
-        }
-        whitespaces[2] = "";
-        for (int p = 0; p < biggestNumbers[2] - 4; p++){
-            whitespaces[2] = whitespaces[2] + " ";
-        }
-        whitespaces[3] = "";
-        for (int p = 0; p < biggestNumbers[3] - 1; p++){
-            whitespaces[3] = whitespaces[3] + " ";
-        }
-        whitespaces[4] = "";
-        for (int p = 0; p < biggestNumbers[4] - 1; p++){
-            whitespaces[4] = whitespaces[4] + " ";
-        }
-        whitespaces[5] = "";
-        for (int p = 0; p < biggestNumbers[5] - 5; p++){
-            whitespaces[5] = whitespaces[5] + " ";
-        }
+
         System.out.format("%n| ID " + whitespaces[0] + "| First Name" + whitespaces[1] + "| Last Name" + whitespaces[2]
                 + "| Email " + whitespaces[3] + "| Gender" + whitespaces[4] + "| IP Address" + whitespaces[5] + "| %n");
         for (String aStringInHeader : headOfTable)
