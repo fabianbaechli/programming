@@ -29,6 +29,7 @@ public class Main extends Application {
             primaryStage.setMaxHeight(315);
             primaryStage.setMinWidth(264);
             primaryStage.setMaxWidth(264);
+
             primaryStage.show();
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);

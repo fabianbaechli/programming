@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Encrypted Chat">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/Encrypted_Chat_jar/Encrypted Chat.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
