@@ -1,1 +1,1 @@
-Encrypted Chat
+WWWOW This application is LIT AF
