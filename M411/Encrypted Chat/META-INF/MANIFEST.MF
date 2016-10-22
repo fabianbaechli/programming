@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Main-Class: /Users/Fabian/Documents/GitHub/Encrypted Chat/out/production/Encrypted Chat/sample/Main

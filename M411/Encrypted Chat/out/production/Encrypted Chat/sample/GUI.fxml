@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="StackPane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="346.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <bottom>
+            <BorderPane prefHeight="195.0" prefWidth="346.0" BorderPane.alignment="CENTER">
+               <center>
+                  <TextArea fx:id="TextArea1" prefHeight="141.0" prefWidth="346.0" wrapText="true" BorderPane.alignment="CENTER" />
+               </center>
+               <top>
+                  <BorderPane prefHeight="46.0" prefWidth="346.0" BorderPane.alignment="CENTER">
+                     <right>
+                        <Button fx:id="Button1" mnemonicParsing="false" text="SEND" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets right="10.0" />
+                           </BorderPane.margin>
+                        </Button>
+                     </right>
+                     <left>
+                        <Button fx:id="Button2" mnemonicParsing="false" text="CLEAR" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets left="10.0" />
+                           </BorderPane.margin>
+                        </Button>
+                     </left>
+                  </BorderPane>
+               </top>
+            </BorderPane>
+         </bottom>
+         <center>
+            <TextArea fx:id="TextArea2" editable="false" maxHeight="1.7976931348623157E308" prefHeight="312.0" prefWidth="346.0" wrapText="true" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
