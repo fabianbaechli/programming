@@ -113,12 +113,12 @@ public class Communication {
             }
             Runtime.getRuntime().addShutdownHook(new Thread() {
                 public void run() {
-                try {
-                    out.close();
-                    in.close();
-                    clientSocket.close();
-                    System.out.println("The server is shut down!");
-                } catch (IOException e) { /* failed */ }
+                    try {
+                        out.close();
+                        in.close();
+                        clientSocket.close();
+                        System.out.println("The server is shut down!");
+                    } catch (IOException e) { /* failed */ }
                 }
             });
         }

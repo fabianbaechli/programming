@@ -5,8 +5,6 @@ import java.net.InetAddress;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.ResourceBundle;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import javafx.fxml.*;
 import javafx.scene.Node;
@@ -81,6 +79,7 @@ public class startPageController implements Initializable {
                         Communication.handshake(textField1.getText());
                     } catch (Exception e) {
                         System.out.println("Package not delivered");
+                        Label1.setText("Package not delivered");
                     }
                 }
 
