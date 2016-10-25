@@ -5,7 +5,7 @@ public class Main {
     private static String[] headOfTable = new String[6];
     public static void main (String[] args){
         String line;
-        String fileLocation = "/Users/Fabian/Desktop/MOCK_DATA.csv";
+        String fileLocation = "/Users/Fabian/Documents/GitHub/School/M411/CSV_As_Table/MOCK_DATA.csv";
         try (BufferedReader br = new BufferedReader(new FileReader(fileLocation))) {
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");

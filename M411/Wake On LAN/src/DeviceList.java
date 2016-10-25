@@ -20,7 +20,7 @@ import javax.xml.transform.stream.StreamResult;
 public class DeviceList {
 
     public static int maxDevices = 50;
-    public static String fileLocation = "/Users/Fabian/Documents/GitHub/fabian/M411/Wake On LAN/out/Konfiguration/config.xml";
+    public static String fileLocation = "/Users/Fabian/Documents/GitHub/School/M411/Wake On LAN/out/Konfiguration/config.xml";
     private HashMap<String, Device> deviceList = new HashMap<>();
 
     public DeviceList(){

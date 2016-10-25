@@ -4,14 +4,10 @@ import java.lang.*;
 import java.io.*;
 
 public class Main {
-    private static String inputFilePath = "/Users/Fabian/Documents/GitHub/school/M411/Div_Algorithms/out/production/Div_Algorithms/inputfile.txt";
-    private static String outputFilePath = "/Users/Fabian/Documents/GitHub/school/M411/Div_Algorithms/out/production/Div_Algorithms/outputfile.txt";
+    private static String inputFilePath = "/inputfile.txt";
+    private static String outputFilePath = "/outputfile.txt";
 
     public static void main(String[] args) {
-        /*TODO
-         * More sorting algorithms
-         * Correct text change of JLabel
-         */
         GUI.mainGui();
     }
 

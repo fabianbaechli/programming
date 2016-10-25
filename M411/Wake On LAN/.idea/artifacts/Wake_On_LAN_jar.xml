@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Wake On LAN:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Wake_On_LAN_jar</output-path>
+    <root id="archive" name="Wake On LAN.jar">
+      <element id="module-output" name="Wake On LAN" />
+    </root>
+  </artifact>
+</component>

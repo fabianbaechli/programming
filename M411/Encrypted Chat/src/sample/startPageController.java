@@ -90,7 +90,7 @@ public class startPageController implements Initializable {
                     Stage stage = new Stage();
                     stage.setTitle("Chat Application");
                     stage.setScene(new Scene(root));
-                    stage.setMinHeight(508);
+                    stage.setMinHeight(530);
                     stage.setMinWidth(346);
                     stage.show();
 

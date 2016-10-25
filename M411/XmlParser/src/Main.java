@@ -9,7 +9,7 @@ import org.w3c.dom.Element;
 public class Main {
     public static void main (String[] args){
         try{
-            File inputFile = new File("/Users/Fabian/Documents/GitHub/fabian/M411/XmlParser/src/input.xml");
+            File inputFile = new File("/Users/Fabian/Documents/GitHub/School/M411/XmlParser/src/input.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
