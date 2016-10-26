@@ -29,9 +29,9 @@ public class Main extends Application {
             primaryStage.setTitle("Chess Game // Fabian Bächli 2016");
 
             primaryStage.setMinHeight(770);
-            primaryStage.setMinWidth(750);
+            primaryStage.setMinWidth(950);
             primaryStage.setMaxHeight(770);
-            primaryStage.setMaxWidth(750);
+            primaryStage.setMaxWidth(950);
 
             primaryStage.show();
         } catch (Exception ex) {

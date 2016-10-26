@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChessfieldController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChessfieldController">
    <children>
       <Pane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -178,6 +178,9 @@
                </font>
             </Label>
          </children>
+         <StackPane.margin>
+            <Insets right="200.0" />
+         </StackPane.margin>
       </Pane>
       <BorderPane prefHeight="750.0" prefWidth="750.0">
          <center>
@@ -273,75 +276,78 @@
                </BorderPane.margin>
             </GridPane>
          </center>
+         <StackPane.margin>
+            <Insets right="200.0" />
+         </StackPane.margin>
       </BorderPane>
       <BorderPane prefHeight="750.0" prefWidth="750.0">
          <center>
             <GridPane BorderPane.alignment="CENTER">
                <children>
-                  <Pane id="White-Rook" fx:id="Pane57" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Knight" fx:id="Pane58" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Checkmate" fx:id="Pane59" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
-                  <Pane id="White-King" fx:id="Pane60" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Queen" fx:id="Pane61" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Rook" fx:id="Pane64" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Knight" fx:id="Pane63" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Checkmate" fx:id="Pane62" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Pawn" fx:id="Pane49" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Pawn" fx:id="Pane50" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Pawn" fx:id="Pane51" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Pawn" fx:id="Pane52" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Pawn" fx:id="Pane53" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Pawn" fx:id="Pane54" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Pawn" fx:id="Pane55" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
-                  <Pane id="White-Pawn" fx:id="Pane56" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane41" prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane42" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane43" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane44" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane45" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane46" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane47" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane48" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane33" prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane34" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane35" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane36" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane37" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane38" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane39" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane40" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane25" prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane26" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane27" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane28" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane29" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane30" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane31" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane32" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane17" prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane18" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane19" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane20" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane21" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane22" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane23" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
-                  <Pane fx:id="Pane24" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Pawn" fx:id="Pane9" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Pawn" fx:id="Pane10" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Pawn" fx:id="Pane11" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Pawn" fx:id="Pane12" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Pawn" fx:id="Pane13" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Pawn" fx:id="Pane14" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Pawn" fx:id="Pane15" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Pawn" fx:id="Pane16" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Rook" fx:id="Pane1" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Knight" fx:id="Pane2" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Checkmate" fx:id="Pane3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-King" fx:id="Pane4" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Queen" fx:id="Pane5" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Checkmate" fx:id="Pane6" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Knight" fx:id="Pane7" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
-                  <Pane id="Black-Rook" fx:id="Pane8" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Rook" fx:id="a8" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Knight" fx:id="b8" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Checkmate" fx:id="c8" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
+                  <Pane id="White-King" fx:id="d8" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Queen" fx:id="e8" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Rook" fx:id="h8" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Knight" fx:id="g8" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Checkmate" fx:id="f8" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Pawn" fx:id="a7" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Pawn" fx:id="b7" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Pawn" fx:id="c7" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Pawn" fx:id="d7" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Pawn" fx:id="e7" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Pawn" fx:id="f7" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Pawn" fx:id="g7" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+                  <Pane id="White-Pawn" fx:id="h7" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="a6" prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="b6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="c6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="d6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="e6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="f6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="g6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="h6" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="2" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="a5" prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="b5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="c5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="d5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="e5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="f5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="g5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="h5" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="a4" prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="b4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="c4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="d4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="e4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="f4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="g4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="h4" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="a3" prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="b3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="c3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="d3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="e3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="f3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="g3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
+                  <Pane fx:id="h3" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Pawn" fx:id="a2" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Pawn" fx:id="b2" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Pawn" fx:id="c2" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Pawn" fx:id="d2" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Pawn" fx:id="e2" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Pawn" fx:id="f2" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Pawn" fx:id="g2" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Pawn" fx:id="h2" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Rook" fx:id="a1" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Knight" fx:id="b1" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Checkmate" fx:id="c1" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-King" fx:id="d1" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="3" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Queen" fx:id="e1" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Checkmate" fx:id="f1" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="5" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Knight" fx:id="g1" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="6" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
+                  <Pane id="Black-Rook" fx:id="h1" prefHeight="200.0" prefWidth="200.0" stylesheets="@style.css" GridPane.columnIndex="7" GridPane.hgrow="NEVER" GridPane.rowIndex="7" GridPane.vgrow="NEVER" />
                </children>
                <columnConstraints>
                   <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="ALWAYS" />
@@ -368,6 +374,18 @@
                </BorderPane.margin>
             </GridPane>
          </center>
+         <StackPane.margin>
+            <Insets right="200.0" />
+         </StackPane.margin>
       </BorderPane>
+      <Pane prefHeight="750.0" prefWidth="166.0" style="-fx-border-radius: 3px;">
+         <StackPane.margin>
+            <Insets left="750.0" />
+         </StackPane.margin>
+         <children>
+            <Label fx:id="Label33" layoutX="33.0" layoutY="53.0" text="White's Turn" />
+            <Label fx:id="Label34" layoutX="45.0" layoutY="78.0" text="Round: 0" />
+         </children>
+      </Pane>
    </children>
 </StackPane>
