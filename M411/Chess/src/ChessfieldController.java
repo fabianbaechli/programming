@@ -1,234 +1,423 @@
 
-import java.awt.*;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
-import com.sun.javafx.beans.IDProperty;
-import com.sun.javafx.collections.MappingChange;
-import com.sun.javafx.runtime.SystemProperties;
-import javafx.event.EventHandler;
 import javafx.fxml.*;
-import javafx.scene.control.*;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
+import org.jetbrains.annotations.Contract;
 
 public class ChessfieldController implements Initializable {
     @FXML
-    private Pane a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8, c1, c2, c3, c4, c5, c6, c7, c8, d1, d2, d3, d4, d5, d6, d7, d8, e1, e2, e3, e4, e5, e6, e7,
-            e8, f1, f2, f3, f4, f5, f6, f7, f8, g1, g2, g3, g4, g5, g6, g7, g8, h1, h2, h3, h4, h5, h6, h7, h8;
+    private Pane a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8, c1, c2, c3, c4, c5, c6, c7, c8, d1, d2, d3, d4, d5, d6, d7, d8, e1, e2, e3, e4, e5, e6, e7, e8, f1, f2, f3, f4, f5, f6, f7, f8, g1, g2, g3, g4, g5, g6, g7, g8, h1, h2, h3, h4, h5, h6, h7, h8;
+
     @FXML
-    private Label Label1, Label2, Label3, Label4, Label5, Label6, Label7, Label8, Label9, Label10, Label11, Label12, Label13, Label14, Label15, Label16, Label17, Label18,
-            Label19, Label20, Label21, Label22, Label23, Label24, Label25, Label26, Label27, Label28, Label29, Label30, Label31, Label32, Label33, Label34;
-    private static Pane fromPane;
-    private static Pane toPane;
-    private static String colorOfRound = "White";
-    private static int roundCount = 0;
+    private Label Label1, Label2, Label3, Label4, Label5, Label6, Label7, Label8, Label9, Label10, Label11, Label12, Label13, Label14, Label15, Label16, Label17, Label18, Label19, Label20, Label21, Label22, Label23, Label24, Label25, Label26, Label27, Label28, Label29, Label30, Label31, Label32;
+
+    private Pane fromPane;
+    private Pane toPane;
+
+    private String colorOfRound;
+    private String colorOfPlayer;
+
+    private int roundCount = 0;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-        Pane[] allPanes = drawField(false);
-        makeMove(allPanes);
-
+        colorOfPlayer = "White";
+        colorOfRound = "White";
+        Pane[] allPanes = firstDraw();
     }
 
-    private Pane[] drawField(Boolean blackOrWhite) {
-        //Player is Black when true and white when false
-        Pane[] allPanes = {a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8, c1, c2, c3, c4, c5, c6, c7, c8, d1, d2, d3, d4, d5, d6, d7, d8, e1, e2, e3, e4, e5, e6, e7,
-                e8, f1, f2, f3, f4, f5, f6, f7, f8, g1, g2, g3, g4, g5, g6, g7, g8, h1, h2, h3, h4, h5, h6, h7, h8};
-        Label[] allLabels = {Label1, Label2, Label3, Label4, Label5, Label6, Label7, Label8, Label9, Label10, Label11, Label12, Label13, Label14, Label15, Label16, Label17, Label18,
-                Label19, Label20, Label21, Label22, Label23, Label24, Label25, Label26, Label27, Label28, Label29, Label30, Label31, Label32};
+    private Pane[] firstDraw() {
+        Pane[] allPanes = {a1, a2, a3, a4, a5, a6, a7, a8,
+                b1, b2, b3, b4, b5, b6, b7, b8,
+                c1, c2, c3, c4, c5, c6, c7, c8,
+                d1, d2, d3, d4, d5, d6, d7, d8,
+                e1, e2, e3, e4, e5, e6, e7, e8,
+                f1, f2, f3, f4, f5, f6, f7, f8,
+                g1, g2, g3, g4, g5, g6, g7, g8,
+                h1, h2, h3, h4, h5, h6, h7, h8
+        };
 
-        System.out.println(Arrays.toString(allPanes));
-        System.out.println(Arrays.toString(allLabels));
-        //If the player is white
-        if (!blackOrWhite) {
-            //Sets the
+        Label[] allLabels = {
+                Label1, Label2, Label3, Label4,
+                Label5, Label6, Label7, Label8, Label9,
+                Label10, Label11, Label12, Label13,
+                Label14, Label15, Label16, Label17,
+                Label18, Label19, Label20, Label21,
+                Label22, Label23, Label24, Label25,
+                Label26, Label27, Label28, Label29,
+                Label30, Label31, Label32
+        };
+
+        if (colorOfPlayer.equals("White")) {
+            //The Board is designed from the view of a player who plays as black
+            //This changes the positions of the queens and kings
             for (Pane aPane : allPanes) {
-                if (aPane.getId().startsWith("Black-King")) {
+                if (aPane.getId().contains("Black-King")) {
                     String replaceString = aPane.getId().replaceAll("Black-King", "White-Queen");
                     aPane.setId(replaceString);
-                } else if (aPane.getId().startsWith("Black-Queen")) {
+                } else if (aPane.getId().contains("Black-Queen")) {
                     String replaceString = aPane.getId().replaceAll("Black-Queen", "White-King");
                     aPane.setId(replaceString);
-                } else if (aPane.getId().startsWith("White-King")) {
+                } else if (aPane.getId().contains("White-King")) {
                     String replaceString = aPane.getId().replaceAll("White-King", "Black-Queen");
                     aPane.setId(replaceString);
-                } else if (aPane.getId().startsWith("White-Queen")) {
+                } else if (aPane.getId().contains("White-Queen")) {
                     String replaceString = aPane.getId().replaceAll("White-Queen", "Black-King");
                     aPane.setId(replaceString);
                 } else {
-                    if (aPane.getId().startsWith("White")) {
+                    //This changes white figures to black ones and the other way around
+                    if (aPane.getId().contains("White")) {
                         String replaceString = aPane.getId().replaceAll("White", "Black");
                         aPane.setId(replaceString);
-                    } else if (aPane.getId().startsWith("Black")) {
+                    } else if (aPane.getId().contains("Black")) {
                         String replaceString = aPane.getId().replaceAll("Black", "White");
                         aPane.setId(replaceString);
                     }
                 }
             }
-            //Sets the correct raster numbers and chars for white
+            //This sets the correct id's
+            for (Pane aPane : allPanes) {
+                if (aPane.getId().contains("White") || aPane.getId().contains("Black")) {
+                    if (aPane.getId().split("-")[0].contains("a")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("a", "h");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("b")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("b", "g");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("c")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("c", "f");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("d")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("d", "e");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("e")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("e", "d");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("f")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("f", "c");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("g")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("g", "b");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("h")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("h", "a");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    }
+                    if (aPane.getId().split("-")[0].contains("1")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("1", "8");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("2")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("2", "7");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("3")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("3", "6");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("3")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("3", "6");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("4")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("4", "5");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("5")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("5", "4");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("6")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("6", "3");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("7")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("7", "2");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    } else if (aPane.getId().split("-")[0].contains("8")) {
+                        String replaceString = aPane.getId().split("-")[0].replaceAll("8", "1");
+                        aPane.setId(replaceString + "-" + aPane.getId().split("-")[1] + "-" + aPane.getId().split("-")[2]);
+                    }
+                }
+            }
             for (int i = 16; i < 32; i++) {
                 allLabels[i].setVisible(false);
             }
+
         } else {
+            int count = 0;
+            for (int i = 8; i > 0; i--) {
+                count++;
+                if (!allPanes[i - 1].getId().contains("White") &&
+                        !allPanes[i - 1].getId().contains("Black")) {
+                    allPanes[i - 1].setId("h" + count);
+                }
+            }
+            count = 0;
+            for (int i = 16; i > 8; i--) {
+                count++;
+                if (!allPanes[i - 1].getId().contains("White") &&
+                        !allPanes[i - 1].getId().contains("Black")) {
+                    allPanes[i - 1].setId("g" + count);
+                }
+            }
+            count = 0;
+            for (int i = 24; i > 16; i--) {
+                count++;
+                if (!allPanes[i - 1].getId().contains("White") &&
+                        !allPanes[i - 1].getId().contains("Black")) {
+                    allPanes[i - 1].setId("f" + count);
+                }
+            }
+            count = 0;
+            for (int i = 32; i > 24; i--) {
+                count++;
+                if (!allPanes[i - 1].getId().contains("White") &&
+                        !allPanes[i - 1].getId().contains("Black")) {
+                    allPanes[i - 1].setId("e" + count);
+                }
+            }
+            count = 0;
+            for (int i = 40; i > 32; i--) {
+                count++;
+                if (!allPanes[i - 1].getId().contains("White") &&
+                        !allPanes[i - 1].getId().contains("Black")) {
+                    allPanes[i - 1].setId("d" + count);
+                }
+            }
+            count = 0;
+            for (int i = 48; i > 40; i--) {
+                count++;
+                if (!allPanes[i - 1].getId().contains("White") &&
+                        !allPanes[i - 1].getId().contains("Black")) {
+                    allPanes[i - 1].setId("c" + count);
+                }
+            }
+            count = 0;
+            for (int i = 56; i > 48; i--) {
+                count++;
+                if (!allPanes[i - 1].getId().contains("White") &&
+                        !allPanes[i - 1].getId().contains("Black")) {
+                    allPanes[i - 1].setId("b" + count);
+                }
+            }
+            count = 0;
+            for (int i = 64; i > 56; i--) {
+                count++;
+                if (!allPanes[i - 1].getId().contains("White") &&
+                        !allPanes[i - 1].getId().contains("Black")) {
+                    allPanes[i - 1].setId("a" + count);
+                }
+            }
             //Sets the correct raster numbers and chars for black
             for (int i = 0; i < 16; i++) {
                 allLabels[i].setVisible(false);
             }
         }
-        return allPanes;
-    }
 
-    private void makeMove(Pane[] allPanes) {
-        int count = 0;
-        final int[] fieldNumberSetPane = {0};
-        final int[] fieldNumberStartPane = {0};
-
+        //Sets a Mouse Click Handler for every tile
         for (Pane aPane : allPanes) {
-            count++;
-            int finalCount = count;
             aPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                //Character selection
-                if ((aPane.getId().startsWith("White") && colorOfRound.equals("White")) ||
-                        aPane.getId().startsWith("Black") && colorOfRound.equals("Black")) {
+                System.out.println(aPane.getId());
+                if ((aPane.getId().contains("White") ||
+                        aPane.getId().contains("Black")) &&
+                        fromPane == null) {
                     fromPane = aPane;
-                    fieldNumberStartPane[0] = finalCount;
-                    //Empty space selection
                 } else if (fromPane != null) {
                     toPane = aPane;
-                    fieldNumberSetPane[0] = finalCount;
-                    if (moveIsPossible(fromPane, fieldNumberStartPane[0], toPane, fieldNumberSetPane[0], allPanes)) {
-                        if (colorOfRound.equals("White")) {
-                            colorOfRound = "Black";
-                            fromPane = null;
-                            toPane = null;
-                            roundCount++;
-                            System.out.println("White moved, it's black's turn");
-
-                            Label33.setText(Label33.getText().replaceAll("White", "Black"));
-                            Label34.setText("Round: " + roundCount);
-                        } else if (colorOfRound.equals("Black")) {
-                            colorOfRound = "White";
-                            fromPane = null;
-                            toPane = null;
-                            roundCount++;
-                            System.out.println("Black moved, it's white's turn");
-
-                            Label33.setText(Label33.getText().replaceAll("Black", "White"));
-                            Label34.setText("Round: " + roundCount);
-                        }
-                    }
+                    makeMove(fromPane, toPane, allPanes);
+                    fromPane = null;
+                    toPane = null;
                 }
             });
         }
+        setImages(allPanes);
+        return allPanes;
     }
 
-    private static boolean moveIsPossible(Pane startPane, int from, Pane setPane, int to, Pane[] allFields) {
-        System.out.println("From:   " + fromPane.getId());
-        System.out.println("To:     " + toPane.getId());
-        if ((startPane.getId().startsWith("White") && colorOfRound.equals("White")) ||
-                (startPane.getId().startsWith("Black") && colorOfRound.equals("Black"))) {
-            //-- PAWN --
-            //Pawn Double Move at start of game
-            if (startPane.getId().endsWith("Pawn") && roundCount <= 1) {
-                if (Math.max(to, from) - Math.min(to, from) == 2 ||
-                        Math.max(to, from) - Math.min(to, from) == 1) {
-                    setPane.setId(startPane.getId());
-                    startPane.setId("");
-                    return true;
-                }
-            } //Pawn Normal Move
-            if (startPane.getId().endsWith("Pawn")) {
-                if (from - to == -1) {
-                    if ((!setPane.getId().startsWith("White")) && (!setPane.getId().startsWith("Black"))) {
-                        setPane.setId(startPane.getId());
-                        startPane.setId("");
-                        return true;
-                    }
-                } else if (from - to == 7 ||        //Pawn eating move
-                        from - to == -9) {
-                    if (setPane.getId().startsWith("White") || setPane.getId().startsWith("Black")) {
-                        setPane.setId(startPane.getId());
-                        startPane.setId("");
-                        return true;
-                    }
-                }
+    private void makeMove(Pane from, Pane to, Pane[] allPanes) {
+        if (moveIsPossible(from, to, allPanes)) {
+            System.out.println("from: " + from.getId() + " to: " + to.getId());
+            if (to.getId().contains("-")) {
+                to.setId(to.getId().split("-")[0] + "-" + from.getId().split("-")[1] + "-" + from.getId().split("-")[2]);
+                from.setId(from.getId().split("-")[0]);
+                setImages(allPanes);
+            } else {
+                to.setId(to.getId() + "-" + from.getId().split("-")[1] + "-" + from.getId().split("-")[2]);
+                from.setId(from.getId().split("-")[0]);
+                setImages(allPanes);
             }
-            //-- Tower
-            if (startPane.getId().endsWith("Rook")) {
-                //If move is on y axis
-                if (Math.max(to, from) - Math.min(to, from) >= 1 &&
-                        Math.max(to, from) - Math.min(to, from) < 8) {
-                    //If move is from top to bottom
-                    if (from > to) {
-                        //Move on opponent
-                        if ((colorOfRound.equals("White") && setPane.getId().startsWith("Black")) ||
-                                colorOfRound.equals("Black") && setPane.getId().startsWith("White")) {
-                            for (int i = from - 2; i > to - 1; i--) {
-                                System.out.println(allFields[i].getId());
-                                if (allFields[i].getId().startsWith("White") ||
-                                        allFields[i].getId().startsWith("Black")) {
-                                    System.out.println("Move on opponent but " + allFields[i].getId() + " in way");
-                                    return false;
+            if (colorOfRound.equals("Black")) {
+                colorOfRound = "White";
+                //Remove later, boi
+                colorOfPlayer = "White";
+            } else {
+                colorOfRound = "Black";
+                //This also
+                colorOfPlayer = "Black";
+            }
+            roundCount++;
+        }
+    }
+
+    private Boolean moveIsPossible(Pane from, Pane to, Pane[] allPanes) {
+        String fromColor = from.getId().split("-")[1];
+        String toColor;
+        int fromNumber = Character.getNumericValue(from.getId().charAt(1));
+        int toNumber = Character.getNumericValue(to.getId().charAt(1));
+        String fromChar = String.valueOf(from.getId().charAt(0));
+        String toChar = String.valueOf(to.getId().charAt(0));
+        if (to.getId().contains("White") || to.getId().contains("Black")) {
+            toColor = to.getId().split("-")[1];
+        } else {
+            toColor = "noColor";
+        }
+
+        if (colorOfPlayer.matches(colorOfRound)) {
+            if (fromColor.equals(colorOfPlayer)) {
+                //Have to change this in future for rochade
+                if (!fromColor.matches(toColor)) {
+                    //Logic for pawn
+                    if (from.getId().contains("Pawn")) {
+                        if (fromColor.equals("White")) {
+                            if (fromNumber + 1 == toNumber &&
+                                    roundCount > 1) {
+                                if (fromChar.equals(toChar) &&
+                                        toColor.equals("noColor")) {
+                                    return true;
+                                } else if (((int) fromChar.charAt(0) + 1 == (int) toChar.charAt(0) ||
+                                        (int) fromChar.charAt(0) - 1 == (int) toChar.charAt(0)) &&
+                                        toColor.equals("Black")) {
+                                    return true;
+                                }
+                            } else if ((fromNumber + 1 == toNumber ||
+                                    fromNumber + 2 == toNumber) &&
+                                    roundCount < 2) {
+                                if (fromChar.equals(toChar) &&
+                                        toColor.equals("noColor")) {
+                                    return true;
+                                }
+                            }
+                        } else if (fromColor.equals("Black")) {
+                            if (fromNumber - 1 == toNumber &&
+                                    roundCount > 1) {
+                                if (fromChar.equals(toChar) &&
+                                        toColor.equals("noColor")) {
+                                    return true;
+                                } else if (((int) fromChar.charAt(0) + 1 == (int) toChar.charAt(0) ||
+                                        (int) fromChar.charAt(0) - 1 == (int) toChar.charAt(0)) &&
+                                        toColor.equals("White")) {
+                                    return true;
+                                }
+                            } else if ((fromNumber - 1 == toNumber ||
+                                    fromNumber - 2 == toNumber) &&
+                                    roundCount < 2) {
+                                if (fromChar.equals(toChar) &&
+                                        toColor.equals("noColor")) {
+                                    return true;
                                 }
                             }
                         }
-                        //Move on empty tile
-                        else if (!setPane.getId().startsWith("White") && !setPane.getId().startsWith("Black")) {
-                            for (int i = from - 2; i > to - 1; i--) {
-                                if (allFields[i].getId().startsWith("White") ||
-                                        allFields[i].getId().startsWith("Black")) {
-                                    System.out.println("Move on empty tile but " + allFields[i].getId() + " in way");
-                                    return false;
-                                }
+                    } else if (from.getId().contains("Rook")) {
+                        int fromPosition = 0;
+                        int toPosition = 0;
+
+                        for (int i = 0; i < allPanes.length; i++) {
+                            if (allPanes[i].getId().equals(from.getId())) {
+                                fromPosition = i;
+                            } else if (allPanes[i].getId().equals(to.getId())) {
+                                toPosition = i;
                             }
                         }
-                    } else if (from < to) {
-                        //Move on opponent
-                        if ((colorOfRound.equals("White") && setPane.getId().startsWith("Black")) ||
-                                colorOfRound.equals("Black") && setPane.getId().startsWith("White")) {
-                            for (int i = to - 2; i > from - 2; i--) {
-                                if (allFields[i].getId().startsWith("White") && colorOfRound.equals("White") ||
-                                        allFields[i].getId().startsWith("Black") && colorOfRound.equals("Black")) {
-                                    System.out.println("Move on opponent but " + allFields[i].getId() + " in way");
-                                    return false;
+                        if (fromChar.equals(toChar)) {
+                            if (fromPosition < toPosition) {
+                                for (int i = fromPosition + 1; i <= toPosition - 1; i++) {
+                                    if (allPanes[i].getId().contains("White") ||
+                                            allPanes[i].getId().contains("Black")) {
+                                        System.out.println(allPanes[i].getId() + " In way");
+                                        return false;
+                                    }
+                                }
+                                return true;
+                            } else if (fromPosition > toPosition) {
+                                for (int i = toPosition + 1; i <= fromPosition - 1; i++) {
+                                    if (allPanes[i].getId().contains("White") ||
+                                            allPanes[i].getId().contains("Black")) {
+                                        System.out.println(allPanes[i].getId() + " In way");
+                                        return false;
+                                    }
                                 }
                             }
-                        }
-                        //Move on empty tile
-                        else if (!setPane.getId().startsWith("Black") && !setPane.getId().startsWith("White")) {
-                            for (int i = to - 2; i > from - 1; i--) {
-                                if (allFields[i].getId().startsWith("White") ||
-                                        allFields[i].getId().startsWith("Black")) {
-                                    System.out.println("Move on empty tile but " + allFields[i].getId() + " in way");
-                                    return false;
+                            return true;
+                        } else if (fromNumber == toNumber) {
+                            if (fromPosition < toPosition) {
+                                for (int i = fromPosition + 8; i <= toPosition - 8; i += 8) {
+                                    if (allPanes[i].getId().contains("White") ||
+                                            allPanes[i].getId().contains("Black")) {
+                                        System.out.println(allPanes[i].getId() + " In way");
+                                        return false;
+                                    }
+                                }
+                                return true;
+                            } else if (fromPosition > toPosition) {
+                                for (int i = toPosition + 8; i <= fromPosition - 8; i += 8) {
+                                    if (allPanes[i].getId().contains("White") ||
+                                            allPanes[i].getId().contains("Black")) {
+                                        System.out.println(allPanes[i].getId() + " In way");
+                                        return false;
+                                    }
                                 }
                             }
+                            return true;
                         }
                     }
-                    setPane.setId(startPane.getId());
-                    startPane.setId("");
-                    return true;
+                } else {
+                    System.out.println("You cannot eat one of your own, traitor");
                 }
-                //Move on X Axis
-                if (Math.max(to, from) - Math.min(to, from) == 8) {
-                    setPane.setId(startPane.getId());
-                    startPane.setId("");
-                    return true;
-                } else if (Math.max(to, from) - Math.min(to, from) == 16 ||
-                        Math.max(to, from) - Math.min(to, from) == 24 ||
-                        Math.max(to, from) - Math.min(to, from) == 32 ||
-                        Math.max(to, from) - Math.min(to, from) == 40 ||
-                        Math.max(to, from) - Math.min(to, from) == 48 ||
-                        Math.max(to, from) - Math.min(to, from) == 56) {
-                    
-                }
+            } else {
+                System.out.println("You can't move this figure");
             }
+        } else {
+            System.out.println("Your partner is supposed to make a move");
         }
         return false;
+    }
+
+    private void setImages(Pane[] allPanes) {
+        for (Pane aPane : allPanes) {
+            if (aPane.getId().contains("Black-Pawn")) {
+                aPane.setBackground(new Background(backgroundImageBuilder("icons/pawn-black.png")));
+            } else if (aPane.getId().contains("White-Pawn")) {
+                aPane.setBackground(new Background(backgroundImageBuilder("icons/pawn-white.png")));
+            } else if (aPane.getId().contains("Black-Checkmate")) {
+                aPane.setBackground(new Background(backgroundImageBuilder("icons/checkmate-black.png")));
+            } else if (aPane.getId().contains("White-Checkmate")) {
+                aPane.setBackground(new Background(backgroundImageBuilder("icons/checkmate-white.png")));
+            } else if (aPane.getId().contains("Black-King")) {
+                aPane.setBackground(new Background(backgroundImageBuilder("icons/king-black.png")));
+            } else if (aPane.getId().contains("White-King")) {
+                aPane.setBackground(new Background(backgroundImageBuilder("icons/king-white.png")));
+            } else if (aPane.getId().contains("Black-Knight")) {
+                aPane.setBackground(new Background(backgroundImageBuilder("icons/knight-black.png")));
+            } else if (aPane.getId().contains("White-Knight")) {
+                aPane.setBackground(new Background(backgroundImageBuilder("icons/knight-white.png")));
+            } else if (aPane.getId().contains("Black-Queen")) {
+                aPane.setBackground(new Background(backgroundImageBuilder("icons/queen-black.png")));
+            } else if (aPane.getId().contains("White-Queen")) {
+                aPane.setBackground(new Background(backgroundImageBuilder("icons/queen-white.png")));
+            } else if (aPane.getId().contains("Black-Rook")) {
+                aPane.setBackground(new Background(backgroundImageBuilder("icons/rook-black.png")));
+            } else if (aPane.getId().contains("White-Rook")) {
+                aPane.setBackground(new Background(backgroundImageBuilder("icons/rook-white.png")));
+            } else {
+                aPane.setBackground(null);
+            }
+        }
+    }
+
+    @Contract("_ -> !null")
+    private BackgroundImage backgroundImageBuilder(String path) {
+        return new BackgroundImage(new Image(path, 65, 65, true, true),
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                BackgroundSize.DEFAULT);
     }
 }

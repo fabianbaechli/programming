@@ -24,7 +24,6 @@ public class Main extends Application {
         try {
             StackPane page = FXMLLoader.load(Main.class.getResource("Chessfield.fxml"));
             Scene scene = new Scene(page);
-            scene.getStylesheets().add("style.css");
             primaryStage.setScene(scene);
             primaryStage.setTitle("Chess Game // Fabian Bächli 2016");
 
