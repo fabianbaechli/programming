@@ -369,6 +369,18 @@ public class ChessfieldController implements Initializable {
                             }
                             return true;
                         }
+                    } else if (from.getId().contains("Knight")) {
+                        if ((fromChar.charAt(0) + 2 == toChar.charAt(0) ||
+                                toChar.charAt(0) + 2 == fromChar.charAt(0)) &&
+                                (fromNumber + 1 == toNumber ||
+                                toNumber + 1 == fromNumber)) {
+                            return true;
+                        } else if ((fromChar.charAt(0) + 1 == toChar.charAt(0) ||
+                                toChar.charAt(0) + 1 == fromChar.charAt(0)) &&
+                                (fromNumber + 2 == toNumber ||
+                                toNumber + 2 == fromNumber)) {
+                            return true;
+                        }
                     }
                 } else {
                     System.out.println("You cannot eat one of your own, traitor");
