@@ -1,6 +1,5 @@
 
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 import javafx.fxml.*;
@@ -20,16 +19,22 @@ public class ChessfieldController implements Initializable {
     private Pane fromPane;
     private Pane toPane;
 
-    private String colorOfRound;
-    private String colorOfPlayer;
+    private static String colorOfRound;
+    private static String colorOfPlayer;
+    private static String fromColor;
+    private static String toColor;
+    private static String fromChar;
+    private static String toChar;
 
-    private int roundCount = 0;
+    private static int roundCount = 0;
+    private static int fromNumber;
+    private static int toNumber;
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
         colorOfPlayer = "White";
         colorOfRound = "White";
-        Pane[] allPanes = firstDraw();
+        firstDraw();
     }
 
     private Pane[] firstDraw() {
@@ -260,12 +265,11 @@ public class ChessfieldController implements Initializable {
     }
 
     private Boolean moveIsPossible(Pane from, Pane to, Pane[] allPanes) {
-        String fromColor = from.getId().split("-")[1];
-        String toColor;
-        int fromNumber = Character.getNumericValue(from.getId().charAt(1));
-        int toNumber = Character.getNumericValue(to.getId().charAt(1));
-        String fromChar = String.valueOf(from.getId().charAt(0));
-        String toChar = String.valueOf(to.getId().charAt(0));
+        fromColor = from.getId().split("-")[1];
+        fromNumber = Character.getNumericValue(from.getId().charAt(1));
+        toNumber = Character.getNumericValue(to.getId().charAt(1));
+        fromChar = String.valueOf(from.getId().charAt(0));
+        toChar = String.valueOf(to.getId().charAt(0));
         if (to.getId().contains("White") || to.getId().contains("Black")) {
             toColor = to.getId().split("-")[1];
         } else {
@@ -277,119 +281,203 @@ public class ChessfieldController implements Initializable {
                 //Have to change this in future for rochade
                 if (!fromColor.matches(toColor)) {
                     //Logic for pawn
-                    if (from.getId().contains("Pawn")) {
-                        if (fromColor.equals("White")) {
-                            if (fromNumber + 1 == toNumber &&
-                                    roundCount > 1) {
-                                if (fromChar.equals(toChar) &&
-                                        toColor.equals("noColor")) {
-                                    return true;
-                                } else if (((int) fromChar.charAt(0) + 1 == (int) toChar.charAt(0) ||
-                                        (int) fromChar.charAt(0) - 1 == (int) toChar.charAt(0)) &&
-                                        toColor.equals("Black")) {
-                                    return true;
-                                }
-                            } else if ((fromNumber + 1 == toNumber ||
-                                    fromNumber + 2 == toNumber) &&
-                                    roundCount < 2) {
-                                if (fromChar.equals(toChar) &&
-                                        toColor.equals("noColor")) {
-                                    return true;
-                                }
-                            }
-                        } else if (fromColor.equals("Black")) {
-                            if (fromNumber - 1 == toNumber &&
-                                    roundCount > 1) {
-                                if (fromChar.equals(toChar) &&
-                                        toColor.equals("noColor")) {
-                                    return true;
-                                } else if (((int) fromChar.charAt(0) + 1 == (int) toChar.charAt(0) ||
-                                        (int) fromChar.charAt(0) - 1 == (int) toChar.charAt(0)) &&
-                                        toColor.equals("White")) {
-                                    return true;
-                                }
-                            } else if ((fromNumber - 1 == toNumber ||
-                                    fromNumber - 2 == toNumber) &&
-                                    roundCount < 2) {
-                                if (fromChar.equals(toChar) &&
-                                        toColor.equals("noColor")) {
-                                    return true;
-                                }
-                            }
-                        }
-                    } else if (from.getId().contains("Rook")) {
-                        int fromPosition = 0;
-                        int toPosition = 0;
-
-                        for (int i = 0; i < allPanes.length; i++) {
-                            if (allPanes[i].getId().equals(from.getId())) {
-                                fromPosition = i;
-                            } else if (allPanes[i].getId().equals(to.getId())) {
-                                toPosition = i;
-                            }
-                        }
-                        if (fromChar.equals(toChar)) {
-                            if (fromPosition < toPosition) {
-                                for (int i = fromPosition + 1; i <= toPosition - 1; i++) {
-                                    if (allPanes[i].getId().contains("White") ||
-                                            allPanes[i].getId().contains("Black")) {
-                                        System.out.println(allPanes[i].getId() + " In way");
-                                        return false;
-                                    }
-                                }
-                                return true;
-                            } else if (fromPosition > toPosition) {
-                                for (int i = toPosition + 1; i <= fromPosition - 1; i++) {
-                                    if (allPanes[i].getId().contains("White") ||
-                                            allPanes[i].getId().contains("Black")) {
-                                        System.out.println(allPanes[i].getId() + " In way");
-                                        return false;
-                                    }
-                                }
-                            }
-                            return true;
-                        } else if (fromNumber == toNumber) {
-                            if (fromPosition < toPosition) {
-                                for (int i = fromPosition + 8; i <= toPosition - 8; i += 8) {
-                                    if (allPanes[i].getId().contains("White") ||
-                                            allPanes[i].getId().contains("Black")) {
-                                        System.out.println(allPanes[i].getId() + " In way");
-                                        return false;
-                                    }
-                                }
-                                return true;
-                            } else if (fromPosition > toPosition) {
-                                for (int i = toPosition + 8; i <= fromPosition - 8; i += 8) {
-                                    if (allPanes[i].getId().contains("White") ||
-                                            allPanes[i].getId().contains("Black")) {
-                                        System.out.println(allPanes[i].getId() + " In way");
-                                        return false;
-                                    }
-                                }
-                            }
-                            return true;
-                        }
-                    } else if (from.getId().contains("Knight")) {
-                        if ((fromChar.charAt(0) + 2 == toChar.charAt(0) ||
-                                toChar.charAt(0) + 2 == fromChar.charAt(0)) &&
-                                (fromNumber + 1 == toNumber ||
-                                toNumber + 1 == fromNumber)) {
-                            return true;
-                        } else if ((fromChar.charAt(0) + 1 == toChar.charAt(0) ||
-                                toChar.charAt(0) + 1 == fromChar.charAt(0)) &&
-                                (fromNumber + 2 == toNumber ||
-                                toNumber + 2 == fromNumber)) {
-                            return true;
-                        }
+                    if (from.getId().contains("Pawn") && pawnLogic()) {
+                        return true;
+                    } else if (from.getId().contains("Rook") && rookLogic(from, to, allPanes)) {
+                        return true;
+                    } else if (from.getId().contains("Knight") && knightLogic()) {
+                        return true;
+                    } else if (from.getId().contains("Checkmate") && bishopLogic(from, to, allPanes)) {
+                        return true;
+                    } else if (from.getId().contains("Queen") && queenLogic(from, to, allPanes)) {
+                        return true;
+                    } else if (from.getId().contains("King")) {
+                        return true;
                     }
                 } else {
-                    System.out.println("You cannot eat one of your own, traitor");
+                    System.out.println("You cannot eat one of your own");
                 }
             } else {
                 System.out.println("You can't move this figure");
             }
         } else {
             System.out.println("Your partner is supposed to make a move");
+        }
+        return false;
+    }
+
+    private static Boolean pawnLogic() {
+        if (fromColor.equals("White")) {
+            if (fromNumber + 1 == toNumber &&
+                    roundCount > 1) {
+                if (fromChar.equals(toChar) &&
+                        toColor.equals("noColor")) {
+                    return true;
+                } else if (((int) fromChar.charAt(0) + 1 == (int) toChar.charAt(0) ||
+                        (int) fromChar.charAt(0) - 1 == (int) toChar.charAt(0)) &&
+                        toColor.equals("Black")) {
+                    return true;
+                }
+            } else if ((fromNumber + 1 == toNumber ||
+                    fromNumber + 2 == toNumber) &&
+                    roundCount < 2) {
+                if (fromChar.equals(toChar) &&
+                        toColor.equals("noColor")) {
+                    return true;
+                }
+            }
+        } else if (fromColor.equals("Black")) {
+            if (fromNumber - 1 == toNumber &&
+                    roundCount > 1) {
+                if (fromChar.equals(toChar) &&
+                        toColor.equals("noColor")) {
+                    return true;
+                } else if (((int) fromChar.charAt(0) + 1 == (int) toChar.charAt(0) ||
+                        (int) fromChar.charAt(0) - 1 == (int) toChar.charAt(0)) &&
+                        toColor.equals("White")) {
+                    return true;
+                }
+            } else if ((fromNumber - 1 == toNumber ||
+                    fromNumber - 2 == toNumber) &&
+                    roundCount < 2) {
+                if (fromChar.equals(toChar) &&
+                        toColor.equals("noColor")) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private static Boolean rookLogic(Pane from, Pane to, Pane[] allPanes) {
+        int fromPosition = 0;
+        int toPosition = 0;
+
+        for (int i = 0; i < allPanes.length; i++) {
+            if (allPanes[i].getId().equals(from.getId())) {
+                fromPosition = i;
+            } else if (allPanes[i].getId().equals(to.getId())) {
+                toPosition = i;
+            }
+        }
+        if (fromChar.equals(toChar)) {
+            if (fromPosition < toPosition) {
+                for (int i = fromPosition + 1; i <= toPosition - 1; i++) {
+                    if (allPanes[i].getId().contains("White") ||
+                            allPanes[i].getId().contains("Black")) {
+                        System.out.println(allPanes[i].getId() + " In way");
+                        return false;
+                    }
+                }
+                return true;
+            } else if (fromPosition > toPosition) {
+                for (int i = toPosition + 1; i <= fromPosition - 1; i++) {
+                    if (allPanes[i].getId().contains("White") ||
+                            allPanes[i].getId().contains("Black")) {
+                        System.out.println(allPanes[i].getId() + " In way");
+                        return false;
+                    }
+                }
+            }
+            return true;
+        } else if (fromNumber == toNumber) {
+            if (fromPosition < toPosition) {
+                for (int i = fromPosition + 8; i <= toPosition - 8; i += 8) {
+                    if (allPanes[i].getId().contains("White") ||
+                            allPanes[i].getId().contains("Black")) {
+                        System.out.println(allPanes[i].getId() + " In way");
+                        return false;
+                    }
+                }
+                return true;
+            } else if (fromPosition > toPosition) {
+                for (int i = toPosition + 8; i <= fromPosition - 8; i += 8) {
+                    if (allPanes[i].getId().contains("White") ||
+                            allPanes[i].getId().contains("Black")) {
+                        System.out.println(allPanes[i].getId() + " In way");
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    private static Boolean knightLogic() {
+        if ((fromChar.charAt(0) + 2 == toChar.charAt(0) ||
+                toChar.charAt(0) + 2 == fromChar.charAt(0)) &&
+                fromNumber + 1 == toNumber ||
+                toNumber + 1 == fromNumber) {
+            return true;
+        } else if ((fromChar.charAt(0) + 1 == toChar.charAt(0) ||
+                toChar.charAt(0) + 1 == fromChar.charAt(0)) &&
+                fromNumber + 2 == toNumber ||
+                toNumber + 2 == fromNumber) {
+            return true;
+        }
+        return false;
+    }
+
+    private static Boolean bishopLogic(Pane from, Pane to, Pane[] allPanes) {
+        int charDif = Math.max((int) fromChar.charAt(0), (int) toChar.charAt(0)) - Math.min((int) fromChar.charAt(0), (int) toChar.charAt(0));
+        int numberDif = Math.max(fromNumber, toNumber) - Math.min(fromNumber, toNumber);
+        if (charDif == numberDif) {
+            for (int fromNumberInArray = 0; fromNumberInArray < allPanes.length; fromNumberInArray++) {
+                if (allPanes[fromNumberInArray].getId().equals(from.getId())) {
+                    for (int toNumberInArray = 0; toNumberInArray < allPanes.length; toNumberInArray++) {
+                        if (allPanes[toNumberInArray].getId().equals(to.getId())) {
+
+                            if (toNumberInArray > fromNumberInArray && colorOfPlayer.equals("White")) {
+                                for (int i = fromNumberInArray + 9; i < toNumberInArray; i += 9) {
+                                    if (allPanes[i].getId().contains("Black") || allPanes[i].getId().contains("White")) {
+                                        System.out.println("Couldn't make move because: " + allPanes[i].getId());
+                                        return false;
+                                    }
+                                }
+                            } else if (fromNumberInArray > toNumberInArray && colorOfPlayer.equals("White")) {
+                                for (int i = toNumberInArray + 7; i < fromNumberInArray; i += 7) {
+                                    if (allPanes[i].getId().contains("Black") || allPanes[i].getId().contains("White")) {
+                                        System.out.println("Couldn't make move because: " + allPanes[i].getId());
+                                        return false;
+                                    }
+                                }
+                            } else if (toNumberInArray > fromNumberInArray && colorOfPlayer.equals("Black")) {
+                                for (int i = toNumberInArray - 7; i > fromNumberInArray; i -= 7) {
+                                    if (allPanes[i].getId().contains("Black") || allPanes[i].getId().contains("White")) {
+                                        System.out.println("Couldn't make move because: " + allPanes[i].getId());
+                                        return false;
+                                    }
+                                }
+                            } else if (fromNumberInArray > toNumberInArray && colorOfPlayer.equals("Black")) {
+                                for (int i = fromNumberInArray - 9; i > toNumberInArray; i -= 9) {
+                                    if (allPanes[i].getId().contains("Black") || allPanes[i].getId().contains("White")) {
+                                        System.out.println("Couldn't make move because: " + allPanes[i].getId());
+                                        return false;
+                                    }
+                                }
+                            }
+                            return true;
+                        }
+                    }
+                }
+            }
+        } else {
+            System.out.println("Not a valid move");
+            return false;
+        }
+        return false;
+    }
+
+    private static Boolean queenLogic(Pane from, Pane to, Pane[] allPanes) {
+        if (fromChar.equals(toChar) || fromNumber == toNumber) {
+            if (rookLogic(from, to, allPanes)) {
+                return true;
+            }
+        } else {
+            if (bishopLogic(from, to, allPanes)) {
+                return true;
+            }
         }
         return false;
     }
