@@ -323,7 +323,7 @@ public class ChessfieldController implements Initializable {
                 }
             } else if ((fromNumber + 1 == toNumber ||
                     fromNumber + 2 == toNumber) &&
-                    roundCount < 2) {
+                    fromNumber == 2) {
                 if (fromChar.equals(toChar) &&
                         toColor.equals("noColor")) {
                     return true;
@@ -342,7 +342,7 @@ public class ChessfieldController implements Initializable {
                 }
             } else if ((fromNumber - 1 == toNumber ||
                     fromNumber - 2 == toNumber) &&
-                    roundCount < 2) {
+                    fromNumber == 7) {
                 if (fromChar.equals(toChar) &&
                         toColor.equals("noColor")) {
                     return true;
@@ -412,13 +412,13 @@ public class ChessfieldController implements Initializable {
     private static Boolean knightLogic() {
         if ((fromChar.charAt(0) + 2 == toChar.charAt(0) ||
                 toChar.charAt(0) + 2 == fromChar.charAt(0)) &&
-                fromNumber + 1 == toNumber ||
-                toNumber + 1 == fromNumber) {
+                (fromNumber + 1 == toNumber ||
+                toNumber + 1 == fromNumber)) {
             return true;
         } else if ((fromChar.charAt(0) + 1 == toChar.charAt(0) ||
                 toChar.charAt(0) + 1 == fromChar.charAt(0)) &&
-                fromNumber + 2 == toNumber ||
-                toNumber + 2 == fromNumber) {
+                (fromNumber + 2 == toNumber ||
+                toNumber + 2 == fromNumber)) {
             return true;
         }
         return false;
