@@ -6,35 +6,28 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Communication {
-    private String usernameOfClient = "";
     private String ipOfClient = "";
-    private String secretOfClient = "";
-
-    String getUsernameOfClient() {
-        return usernameOfClient;
-    }
+    private long timeOfFirstPackageOfClient;
 
     String getIpOfClient() {
         return ipOfClient;
     }
-
-    String getSecretOfClient() {
-        return secretOfClient;
+    long gettimeOfFirstPackageOfClient() {
+        return timeOfFirstPackageOfClient;
     }
 
-    private Communication(String usernameOfClient, String ipOfClient, String secretOfClient) {
-        this.usernameOfClient = usernameOfClient;
+
+    private Communication(String ipOfClient, long timeOfFirstPackageOfClient) {
         this.ipOfClient = ipOfClient;
-        this.secretOfClient = secretOfClient;
+        this.timeOfFirstPackageOfClient = timeOfFirstPackageOfClient;
     }
 
     static Communication handshakeSocket() throws Exception {
         int port = 4444;
         ServerSocket serverSocket = new ServerSocket(port);
         System.err.println("Started server on port " + port);
-        String usernameOfClient = "";
         String ipOfClient = "";
-        String secretOfClient = "";
+        long timeOfFirstPackageOfClient = 0;
 
         // repeatedly wait for connections, and process
         while (true) {
@@ -52,9 +45,9 @@ public class Communication {
             try {
                 while ((s = in.readLine()) != null) {
                     System.out.println("received string: " + s);
-                    System.out.println("decrypted string to: " + s);
 
-                    String[] infos = s.split("\n");
+                    ipOfClient = s.split("\n")[0];
+                    timeOfFirstPackageOfClient = Long.parseLong(s.split("\n")[1]);
 
                     out.println(s);
                     out.flush();
@@ -69,12 +62,11 @@ public class Communication {
             in.close();
             clientSocket.close();
             startPageController.canContinue = true;
-            handshake("Message", startPageController.ipOfClient);
-            return new Communication(usernameOfClient, ipOfClient, secretOfClient);
+            return new Communication(ipOfClient, timeOfFirstPackageOfClient);
         }
     }
 
-    static void openSocket(TextArea textAreaToSetTextTo, String usernameOfClient) throws Exception {
+    static void openSocket() throws Exception {
         int port = 4433;
         ServerSocket serverSocket = new ServerSocket(port);
         System.err.println("Started server on port " + port);
@@ -97,9 +89,17 @@ public class Communication {
                 while ((s = in.readLine()) != null) {
                     out.println(s);
                     System.out.println("received string: " + s);
-                    System.out.println("decrypted string to: " + s);
-                    textAreaToSetTextTo.setText(textAreaToSetTextTo.getText() + "\n" + usernameOfClient + ": " + s);
-                    textAreaToSetTextTo.positionCaret(textAreaToSetTextTo.getLength());
+
+                    String from;
+                    String to;
+                    String temp[] = s.split(" ");
+                    from = temp[0];
+                    to = temp[1];
+                    ChessfieldController.receivedMove(from, to);
+
+                    System.out.println(from);
+                    System.out.println(to);
+
                     out.flush();
                 }
             } catch (Exception e) {
@@ -118,10 +118,11 @@ public class Communication {
         }
     }
 
-    static void handshake(String message, String ipOfClient) throws Exception {
+    static void handshake(String ipOfClient) throws Exception {
         Socket clientSocket = new Socket(ipOfClient, 4444);
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
-        outToServer.writeBytes(message + '\n');
+        String message = startPageController.ownIp + "\n" + startPageController.timeOfFirstPackage + "\n";
+        outToServer.writeBytes(message);
         System.out.println("Sent: " + message + " to: " + ipOfClient);
         clientSocket.close();
     }

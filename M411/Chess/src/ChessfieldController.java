@@ -1,5 +1,6 @@
 
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 import javafx.fxml.*;
@@ -12,15 +13,25 @@ import org.jetbrains.annotations.NotNull;
 
 public class ChessfieldController implements Initializable {
     @FXML
-    private Pane a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4, b5, b6, b7, b8, c1, c2, c3, c4, c5, c6, c7, c8, d1, d2, d3, d4, d5, d6, d7, d8, e1, e2, e3, e4, e5, e6, e7, e8, f1, f2, f3, f4, f5, f6, f7, f8, g1, g2, g3, g4, g5, g6, g7, g8, h1, h2, h3, h4, h5, h6, h7, h8;
+    private Pane a1, a2, a3, a4, a5, a6, a7, a8, b1, b2, b3, b4,
+            b5, b6, b7, b8, c1, c2, c3, c4, c5, c6, c7, c8, d1,
+            d2, d3, d4, d5, d6, d7, d8, e1, e2, e3, e4, e5, e6,
+            e7, e8, f1, f2, f3, f4, f5, f6, f7, f8, g1, g2, g3,
+            g4, g5, g6, g7, g8, h1, h2, h3, h4, h5, h6, h7, h8;
 
     @FXML
-    private Label Label1, Label2, Label3, Label4, Label5, Label6, Label7, Label8, Label9, Label10, Label11, Label12, Label13, Label14, Label15, Label16, Label17, Label18, Label19, Label20, Label21, Label22, Label23, Label24, Label25, Label26, Label27, Label28, Label29, Label30, Label31, Label32;
+    private Label Label1, Label2, Label3, Label4, Label5, Label6,
+            Label7, Label8, Label9, Label10, Label11, Label12,
+            Label13, Label14, Label15, Label16, Label17, Label18,
+            Label19, Label20, Label21, Label22, Label23, Label24,
+            Label25, Label26, Label27, Label28, Label29, Label30,
+            Label31, Label32;
 
-    private Pane fromPane;
-    private Pane toPane;
+    private static Pane fromPane;
+    private static Pane toPane;
+    private static Pane[] allThePanes;
 
-    private static String colorOfRound;
+    private static String colorOfRound = "White";
     private static String colorOfPlayer;
     private static String fromColor;
     private static String toColor;
@@ -33,9 +44,26 @@ public class ChessfieldController implements Initializable {
 
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
-        colorOfPlayer = "White";
-        colorOfRound = "White";
-        firstDraw();
+        //Opens the socket 4433 to incoming messages
+        Thread openSocketThread = new Thread() {
+            public void run() {
+                try {
+                    Communication.openSocket();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        openSocketThread.setDaemon(true);
+        openSocketThread.start();
+
+        if (startPageController.timeOfFirstPackage > startPageController.timeOfFirstPackageOfClient) {
+            colorOfPlayer = "White";
+        } else if ((startPageController.timeOfFirstPackage < startPageController.timeOfFirstPackageOfClient)) {
+            colorOfPlayer = "Black";
+        }
+
+        allThePanes = firstDraw();
     }
 
     private Pane[] firstDraw() {
@@ -49,8 +77,7 @@ public class ChessfieldController implements Initializable {
                 h1, h2, h3, h4, h5, h6, h7, h8
         };
 
-        Label[] allLabels = {
-                Label1, Label2, Label3, Label4,
+        Label[] allLabels = {Label1, Label2, Label3, Label4,
                 Label5, Label6, Label7, Label8, Label9,
                 Label10, Label11, Label12, Label13,
                 Label14, Label15, Label16, Label17,
@@ -243,6 +270,11 @@ public class ChessfieldController implements Initializable {
     private void makeMove(Pane from, Pane to, Pane[] allPanes) {
         if (moveIsPossible(from, to, allPanes)) {
             System.out.println("from: " + from.getId() + " to: " + to.getId());
+            try {
+                Communication.sendAMessage(from.getId() + " " + to.getId(), startPageController.ipOfClient);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             if (to.getId().contains("-")) {
                 to.setId(to.getId().split("-")[0] + "-" + from.getId().split("-")[1] + "-" + from.getId().split("-")[2]);
                 from.setId(from.getId().split("-")[0]);
@@ -254,14 +286,11 @@ public class ChessfieldController implements Initializable {
             }
             if (colorOfRound.equals("Black")) {
                 colorOfRound = "White";
-                //Remove later, boi
-                colorOfPlayer = "White";
             } else {
                 colorOfRound = "Black";
-                //This also
-                colorOfPlayer = "Black";
             }
             roundCount++;
+            System.out.println("Made move");
         }
     }
 
@@ -535,5 +564,24 @@ public class ChessfieldController implements Initializable {
         return new BackgroundImage(new Image(path, 65, 65, true, true),
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 BackgroundSize.DEFAULT);
+    }
+
+    static void receivedMove(String from, String to) {
+        Pane aFromPane = fromPane;
+        Pane aToPane = toPane;
+
+        for (Pane aPane : allThePanes) {
+            if (aPane.getId().equals(from)) {
+                aFromPane = aPane;
+            } else if (aPane.getId().equals(to)) {
+                aToPane = aPane;
+            }
+        }
+        System.out.println(Arrays.toString(allThePanes));
+
+        if (fromPane != null && toPane != null) {
+            ChessfieldController chessfieldController = new ChessfieldController();
+            chessfieldController.makeMove(aFromPane, aToPane, allThePanes);
+        }
     }
 }
