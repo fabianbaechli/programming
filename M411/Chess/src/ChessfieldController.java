@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 public class ChessfieldController implements Initializable {
     @FXML
@@ -264,6 +265,7 @@ public class ChessfieldController implements Initializable {
         }
     }
 
+    @NotNull
     private Boolean moveIsPossible(Pane from, Pane to, Pane[] allPanes) {
         fromColor = from.getId().split("-")[1];
         fromNumber = Character.getNumericValue(from.getId().charAt(1));
@@ -291,7 +293,7 @@ public class ChessfieldController implements Initializable {
                         return true;
                     } else if (from.getId().contains("Queen") && queenLogic(from, to, allPanes)) {
                         return true;
-                    } else if (from.getId().contains("King")) {
+                    } else if (from.getId().contains("King") && kingLogic()) {
                         return true;
                     }
                 } else {
@@ -306,6 +308,7 @@ public class ChessfieldController implements Initializable {
         return false;
     }
 
+    @NotNull
     private static Boolean pawnLogic() {
         if (fromColor.equals("White")) {
             if (fromNumber + 1 == toNumber &&
@@ -349,6 +352,7 @@ public class ChessfieldController implements Initializable {
         return false;
     }
 
+    @NotNull
     private static Boolean rookLogic(Pane from, Pane to, Pane[] allPanes) {
         int fromPosition = 0;
         int toPosition = 0;
@@ -404,6 +408,7 @@ public class ChessfieldController implements Initializable {
         return false;
     }
 
+    @NotNull
     private static Boolean knightLogic() {
         if ((fromChar.charAt(0) + 2 == toChar.charAt(0) ||
                 toChar.charAt(0) + 2 == fromChar.charAt(0)) &&
@@ -419,6 +424,7 @@ public class ChessfieldController implements Initializable {
         return false;
     }
 
+    @NotNull
     private static Boolean bishopLogic(Pane from, Pane to, Pane[] allPanes) {
         int charDif = Math.max((int) fromChar.charAt(0), (int) toChar.charAt(0)) - Math.min((int) fromChar.charAt(0), (int) toChar.charAt(0));
         int numberDif = Math.max(fromNumber, toNumber) - Math.min(fromNumber, toNumber);
@@ -469,6 +475,7 @@ public class ChessfieldController implements Initializable {
         return false;
     }
 
+    @NotNull
     private static Boolean queenLogic(Pane from, Pane to, Pane[] allPanes) {
         if (fromChar.equals(toChar) || fromNumber == toNumber) {
             if (rookLogic(from, to, allPanes)) {
@@ -480,6 +487,15 @@ public class ChessfieldController implements Initializable {
             }
         }
         return false;
+    }
+
+    @NotNull
+    private static Boolean kingLogic() {
+        int charDif = Math.max((int) fromChar.charAt(0), (int) toChar.charAt(0)) - Math.min((int) fromChar.charAt(0), (int) toChar.charAt(0));
+        int numberDif = Math.max(fromNumber, toNumber) - Math.min(fromNumber, toNumber);
+        System.out.println(charDif);
+        System.out.println(numberDif);
+        return charDif <= 1 && numberDif <= 1;
     }
 
     private void setImages(Pane[] allPanes) {

@@ -22,16 +22,22 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            StackPane page = FXMLLoader.load(Main.class.getResource("Chessfield.fxml"));
+            StackPane page = FXMLLoader.load(Main.class.getResource("ConnectWindow.fxml"));
             Scene scene = new Scene(page);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Chess Game // Fabian Bächli 2016");
 
+            primaryStage.setTitle("Connection Window");
+            /*
+            primaryStage.setTitle("Chess Game // Fabian Bächli 2016");
             primaryStage.setMinHeight(770);
             primaryStage.setMinWidth(950);
             primaryStage.setMaxHeight(770);
             primaryStage.setMaxWidth(950);
-
+            */
+            primaryStage.setMinHeight(315);
+            primaryStage.setMaxHeight(315);
+            primaryStage.setMinWidth(264);
+            primaryStage.setMaxWidth(264);
             primaryStage.show();
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
