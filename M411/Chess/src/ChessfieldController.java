@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.*;
 import javafx.scene.control.Label;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
@@ -255,8 +256,10 @@ public class ChessfieldController implements Initializable {
                         aPane.getId().contains("Black")) &&
                         fromPane == null) {
                     fromPane = aPane;
+                    fromPane.setEffect(new GaussianBlur(5));
                 } else if (fromPane != null) {
                     toPane = aPane;
+                    fromPane.setEffect(null);
                     makeMove(fromPane, toPane, allPanes);
                     fromPane = null;
                     toPane = null;
