@@ -37,8 +37,8 @@
       <file leaf-file-name="ChessfieldController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ChessfieldController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="325" column="73" selection-start-line="325" selection-start-column="73" selection-end-line="325" selection-end-column="73" />
+            <state relative-caret-position="315">
+              <caret line="292" column="20" selection-start-line="292" selection-start-column="20" selection-end-line="292" selection-end-column="20" />
               <folding>
                 <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
                 <element signature="method#firstDraw#0;class#ChessfieldController#0" expanded="false" />
@@ -668,12 +668,12 @@
       <workItem from="1478705724340" duration="6000" />
       <workItem from="1478707150644" duration="9046000" />
       <workItem from="1478765179934" duration="18000" />
-      <workItem from="1478765211203" duration="3799000" />
+      <workItem from="1478765211203" duration="4062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106552000" />
+    <option name="totallyTimeSpent" value="106815000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="125" y="22" width="1214" height="877" extended-state="0" />
@@ -1142,8 +1142,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ChessfieldController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="325" column="73" selection-start-line="325" selection-start-column="73" selection-end-line="325" selection-end-column="73" />
+        <state relative-caret-position="315">
+          <caret line="292" column="20" selection-start-line="292" selection-start-column="20" selection-end-line="292" selection-end-column="20" />
           <folding>
             <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#firstDraw#0;class#ChessfieldController#0" expanded="false" />
