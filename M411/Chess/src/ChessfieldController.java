@@ -9,8 +9,6 @@ import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
 
 public class ChessfieldController implements Initializable {
     @FXML
@@ -273,9 +271,6 @@ public class ChessfieldController implements Initializable {
     }
 
     private void makeMove(Pane from, Pane to, Pane[] allPanes, Boolean sendMove) {
-        if (sendMove) {
-
-        }
         if (moveIsPossible(from, to, allPanes) ||
                 !sendMove) {
             System.out.println("from: " + from.getId() + " to: " + to.getId());
@@ -305,7 +300,6 @@ public class ChessfieldController implements Initializable {
         }
     }
 
-    @NotNull
     private Boolean moveIsPossible(Pane from, Pane to, Pane[] allPanes) {
         fromColor = from.getId().split("-")[1];
         fromNumber = Character.getNumericValue(from.getId().charAt(1));
@@ -348,7 +342,6 @@ public class ChessfieldController implements Initializable {
         return false;
     }
 
-    @NotNull
     private static Boolean pawnLogic() {
         if (fromColor.equals("White")) {
             if (fromNumber + 1 == toNumber &&
@@ -392,7 +385,6 @@ public class ChessfieldController implements Initializable {
         return false;
     }
 
-    @NotNull
     private static Boolean rookLogic(Pane from, Pane to, Pane[] allPanes) {
         int fromPosition = 0;
         int toPosition = 0;
@@ -448,7 +440,6 @@ public class ChessfieldController implements Initializable {
         return false;
     }
 
-    @NotNull
     private static Boolean knightLogic() {
         if ((fromChar.charAt(0) + 2 == toChar.charAt(0) ||
                 toChar.charAt(0) + 2 == fromChar.charAt(0)) &&
@@ -464,7 +455,6 @@ public class ChessfieldController implements Initializable {
         return false;
     }
 
-    @NotNull
     private static Boolean bishopLogic(Pane from, Pane to, Pane[] allPanes) {
         int charDif = Math.max((int) fromChar.charAt(0), (int) toChar.charAt(0)) - Math.min((int) fromChar.charAt(0), (int) toChar.charAt(0));
         int numberDif = Math.max(fromNumber, toNumber) - Math.min(fromNumber, toNumber);
@@ -515,7 +505,6 @@ public class ChessfieldController implements Initializable {
         return false;
     }
 
-    @NotNull
     private static Boolean queenLogic(Pane from, Pane to, Pane[] allPanes) {
         if (fromChar.equals(toChar) || fromNumber == toNumber) {
             if (rookLogic(from, to, allPanes)) {
@@ -529,7 +518,6 @@ public class ChessfieldController implements Initializable {
         return false;
     }
 
-    @NotNull
     private static Boolean kingLogic() {
         int charDif = Math.max((int) fromChar.charAt(0), (int) toChar.charAt(0)) - Math.min((int) fromChar.charAt(0), (int) toChar.charAt(0));
         int numberDif = Math.max(fromNumber, toNumber) - Math.min(fromNumber, toNumber);
@@ -541,38 +529,37 @@ public class ChessfieldController implements Initializable {
     private void setImages(Pane[] allPanes) {
         for (Pane aPane : allPanes) {
             if (aPane.getId().contains("Black-Pawn")) {
-                aPane.setBackground(new Background(backgroundImageBuilder("icons/pawn-black.png")));
+                aPane.setBackground(new Background(backgroundImageBuilder("icon/pawn-black.png")));
             } else if (aPane.getId().contains("White-Pawn")) {
-                aPane.setBackground(new Background(backgroundImageBuilder("icons/pawn-white.png")));
+                aPane.setBackground(new Background(backgroundImageBuilder("icon/pawn-white.png")));
             } else if (aPane.getId().contains("Black-Checkmate")) {
-                aPane.setBackground(new Background(backgroundImageBuilder("icons/checkmate-black.png")));
+                aPane.setBackground(new Background(backgroundImageBuilder("icon/checkmate-black.png")));
             } else if (aPane.getId().contains("White-Checkmate")) {
-                aPane.setBackground(new Background(backgroundImageBuilder("icons/checkmate-white.png")));
+                aPane.setBackground(new Background(backgroundImageBuilder("icon/checkmate-white.png")));
             } else if (aPane.getId().contains("Black-King")) {
-                aPane.setBackground(new Background(backgroundImageBuilder("icons/king-black.png")));
+                aPane.setBackground(new Background(backgroundImageBuilder("icon/king-black.png")));
             } else if (aPane.getId().contains("White-King")) {
-                aPane.setBackground(new Background(backgroundImageBuilder("icons/king-white.png")));
+                aPane.setBackground(new Background(backgroundImageBuilder("icon/king-white.png")));
             } else if (aPane.getId().contains("Black-Knight")) {
-                aPane.setBackground(new Background(backgroundImageBuilder("icons/knight-black.png")));
+                aPane.setBackground(new Background(backgroundImageBuilder("icon/knight-black.png")));
             } else if (aPane.getId().contains("White-Knight")) {
-                aPane.setBackground(new Background(backgroundImageBuilder("icons/knight-white.png")));
+                aPane.setBackground(new Background(backgroundImageBuilder("icon/knight-white.png")));
             } else if (aPane.getId().contains("Black-Queen")) {
-                aPane.setBackground(new Background(backgroundImageBuilder("icons/queen-black.png")));
+                aPane.setBackground(new Background(backgroundImageBuilder("icon/queen-black.png")));
             } else if (aPane.getId().contains("White-Queen")) {
-                aPane.setBackground(new Background(backgroundImageBuilder("icons/queen-white.png")));
+                aPane.setBackground(new Background(backgroundImageBuilder("icon/queen-white.png")));
             } else if (aPane.getId().contains("Black-Rook")) {
-                aPane.setBackground(new Background(backgroundImageBuilder("icons/rook-black.png")));
+                aPane.setBackground(new Background(backgroundImageBuilder("icon/rook-black.png")));
             } else if (aPane.getId().contains("White-Rook")) {
-                aPane.setBackground(new Background(backgroundImageBuilder("icons/rook-white.png")));
+                aPane.setBackground(new Background(backgroundImageBuilder("icon/rook-white.png")));
             } else {
                 aPane.setBackground(null);
             }
         }
     }
 
-    @Contract("_ -> !null")
     private BackgroundImage backgroundImageBuilder(String path) {
-        return new BackgroundImage(new Image(path, 65, 65, true, true),
+        return new BackgroundImage(new Image(this.getClass().getResourceAsStream(path), 65, 65, true, true),
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 BackgroundSize.DEFAULT);
     }

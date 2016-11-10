@@ -17,18 +17,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            /*
-            StackPane page = FXMLLoader.load(Main.class.getResource("Chessfield.fxml"));
-            Scene scene = new Scene(page);
-            primaryStage.setScene(scene);
-
-            primaryStage.setTitle("Chess Game // Fabian Bächli 2016");
-            primaryStage.setMinHeight(770);
-            primaryStage.setMinWidth(950);
-            primaryStage.setMaxHeight(770);
-            primaryStage.setMaxWidth(950);
-            primaryStage.show();
-            */
             StackPane page = FXMLLoader.load(Main.class.getResource("ConnectWindow.fxml"));
             Scene scene = new Scene(page);
             primaryStage.setScene(scene);
