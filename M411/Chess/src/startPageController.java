@@ -46,7 +46,7 @@ public class startPageController implements Initializable {
                     public void run() {
                         try {
                             Communication communication = Communication.handshakeSocket();
-                            ipOfClient = communication.getIpOfClient();
+                            ipOfClient = textField1.getText();
                             timeOfFirstPackageOfClient = communication.gettimeOfFirstPackageOfClient();
                         } catch (Exception e) {
                             e.printStackTrace();

@@ -46,8 +46,7 @@ public class Communication {
                 while ((s = in.readLine()) != null) {
                     System.out.println("received string: " + s);
 
-                    ipOfClient = s.split("\n")[0];
-                    timeOfFirstPackageOfClient = Long.parseLong(s.split("\n")[1]);
+                    timeOfFirstPackageOfClient = Long.parseLong(s.split(",")[1]);
 
                     out.println(s);
                     out.flush();
@@ -121,8 +120,8 @@ public class Communication {
     static void handshake(String ipOfClient) throws Exception {
         Socket clientSocket = new Socket(ipOfClient, 4444);
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
-        String message = startPageController.ownIp + "\n" + startPageController.timeOfFirstPackage + "\n";
-        outToServer.writeBytes(message);
+        String message = startPageController.ownIp + "," + startPageController.timeOfFirstPackage;
+        outToServer.writeBytes(message + "\n");
         System.out.println("Sent: " + message + " to: " + ipOfClient);
         clientSocket.close();
     }

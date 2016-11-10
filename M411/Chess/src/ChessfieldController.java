@@ -62,6 +62,8 @@ public class ChessfieldController implements Initializable {
             colorOfPlayer = "White";
         } else if ((startPageController.timeOfFirstPackage < startPageController.timeOfFirstPackageOfClient)) {
             colorOfPlayer = "Black";
+        } else if (startPageController.timeOfFirstPackage == startPageController.timeOfFirstPackageOfClient) {
+            colorOfPlayer = "White";
         }
 
         allThePanes = firstDraw();

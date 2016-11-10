@@ -25,54 +25,25 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="345">
               <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="28" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#314#315#0" expanded="true" />
-                <element signature="e#387#388#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChessfieldController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ChessfieldController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="266" column="15" selection-start-line="266" selection-start-column="15" selection-end-line="266" selection-end-column="15" />
-              <folding>
-                <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
-                <element signature="e#3340#3408#0" expanded="false" />
-                <element signature="method#makeMove#0;class#ChessfieldController#0" expanded="false" />
-                <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
-                <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
-                <element signature="method#rookLogic#0;class#ChessfieldController#0" expanded="false" />
-                <element signature="method#knightLogic#0;class#ChessfieldController#0" expanded="false" />
-                <element signature="method#bishopLogic#0;class#ChessfieldController#0" expanded="false" />
-                <element signature="method#queenLogic#0;class#ChessfieldController#0" expanded="false" />
-                <element signature="method#kingLogic#0;class#ChessfieldController#0" expanded="false" />
-                <element signature="method#setImages#0;class#ChessfieldController#0" expanded="false" />
-                <element signature="method#backgroundImageBuilder#0;class#ChessfieldController#0" expanded="false" />
-                <element signature="method#receivedMove#0;class#ChessfieldController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Communication.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Communication.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Communication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
+            <state relative-caret-position="510">
+              <caret line="123" column="44" selection-start-line="123" selection-start-column="44" selection-end-line="123" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#251#252#0" expanded="true" />
-                <element signature="e#284#285#0" expanded="true" />
-                <element signature="e#327#328#0" expanded="true" />
-                <element signature="e#376#377#0" expanded="true" />
-                <element signature="e#4008#4368#0" expanded="true" />
-                <element signature="e#4367#4368#0" expanded="true" />
+                <element signature="method#openSocket#0;class#Communication#0" expanded="false" />
+                <element signature="e#3956#4316#0" expanded="true" />
+                <element signature="e#4315#4316#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,12 +52,9 @@
       <file leaf-file-name="startPageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/startPageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-              <folding>
-                <element signature="e#1291#1805#0" expanded="true" />
-                <element signature="e#1804#1805#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="48" column="61" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,7 +65,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="225">
               <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
               <folding />
             </state>
@@ -127,8 +95,8 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/out/production/Chess/ConnectWindow.fxml" />
         <option value="$PROJECT_DIR$/src/startPageController.java" />
-        <option value="$PROJECT_DIR$/src/Communication.java" />
         <option value="$PROJECT_DIR$/src/ChessfieldController.java" />
+        <option value="$PROJECT_DIR$/src/Communication.java" />
       </list>
     </option>
   </component>
@@ -429,6 +397,7 @@
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
+      <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
@@ -594,6 +563,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -647,11 +622,13 @@
       <workItem from="1478705691212" duration="3000" />
       <workItem from="1478705724340" duration="6000" />
       <workItem from="1478707150644" duration="9046000" />
+      <workItem from="1478765179934" duration="18000" />
+      <workItem from="1478765211203" duration="214000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102735000" />
+    <option name="totallyTimeSpent" value="102967000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="125" y="22" width="1214" height="877" extended-state="0" />
@@ -664,8 +641,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2759901" sideWeight="0.5026139" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28836635" sideWeight="0.4973861" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32920793" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -675,8 +652,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24943988" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39851484" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -731,8 +708,6 @@
           <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -742,8 +717,7 @@
         <state relative-caret-position="1035">
           <caret line="478" column="28" selection-start-line="478" selection-start-column="28" selection-end-line="478" selection-end-column="28" />
           <folding>
-            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="e#3340#3408#0" expanded="false" />
+            <element signature="e#3488#3556#0" expanded="false" />
             <element signature="method#makeMove#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -765,8 +739,6 @@
           <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -776,8 +748,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="e#3340#3408#0" expanded="false" />
+            <element signature="e#3488#3556#0" expanded="false" />
             <element signature="method#makeMove#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -809,8 +780,6 @@
           <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -820,8 +789,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="e#3340#3408#0" expanded="false" />
+            <element signature="e#3488#3556#0" expanded="false" />
             <element signature="method#makeMove#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -853,8 +821,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -865,8 +831,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -877,8 +841,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -889,8 +851,6 @@
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -900,8 +860,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="e#3340#3408#0" expanded="false" />
+            <element signature="e#3488#3556#0" expanded="false" />
             <element signature="method#makeMove#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -925,8 +884,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -937,8 +894,6 @@
           <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -958,8 +913,7 @@
         <state relative-caret-position="405">
           <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
           <folding>
-            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="e#3340#3408#0" expanded="false" />
+            <element signature="e#3488#3556#0" expanded="false" />
             <element signature="method#makeMove#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -981,8 +935,6 @@
           <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1002,8 +954,7 @@
         <state relative-caret-position="405">
           <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
           <folding>
-            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="e#3340#3408#0" expanded="false" />
+            <element signature="e#3488#3556#0" expanded="false" />
             <element signature="method#makeMove#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -1025,8 +976,6 @@
           <caret line="31" column="42" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1046,8 +995,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="e#3340#3408#0" expanded="false" />
+            <element signature="e#3488#3556#0" expanded="false" />
             <element signature="method#makeMove#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -1084,18 +1032,6 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/javafx-src.zip!/javafx/beans/property/StringPropertyBase.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/javafx-src.zip!/javafx/scene/Node.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="28" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Chess/ConnectWindow.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1103,7 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="258" selection-start-line="11" selection-start-column="258" selection-end-line="11" selection-end-column="258" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1112,7 +1047,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="225">
           <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
           <folding />
         </state>
@@ -1122,7 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1130,46 +1064,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="980" column="0" selection-start-line="980" selection-start-column="0" selection-end-line="980" selection-end-column="0" />
-          <folding>
-            <element signature="e#42618#42619#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Communication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#284#285#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-            <element signature="e#4008#4368#0" expanded="true" />
-            <element signature="e#4367#4368#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/startPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <element signature="e#1291#1805#0" expanded="true" />
-            <element signature="e#1804#1805#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ChessfieldController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="266" column="15" selection-start-line="266" selection-start-column="15" selection-end-line="266" selection-end-column="15" />
+        <state relative-caret-position="257">
+          <caret line="65" column="36" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
           <folding>
-            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="e#3340#3408#0" expanded="false" />
+            <element signature="e#3488#3556#0" expanded="false" />
             <element signature="method#makeMove#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -1181,6 +1084,37 @@
             <element signature="method#setImages#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#backgroundImageBuilder#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#receivedMove#0;class#ChessfieldController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="28" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/startPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="48" column="61" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Communication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="123" column="44" selection-start-line="123" selection-start-column="44" selection-end-line="123" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#openSocket#0;class#Communication#0" expanded="false" />
+            <element signature="e#3956#4316#0" expanded="true" />
+            <element signature="e#4315#4316#0" expanded="true" />
           </folding>
         </state>
       </provider>
