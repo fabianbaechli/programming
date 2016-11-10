@@ -262,7 +262,7 @@ public class ChessfieldController implements Initializable {
                 } else if (fromPane != null) {
                     toPane = aPane;
                     fromPane.setEffect(null);
-                    makeMove(fromPane, toPane, allPanes);
+                    makeMove(fromPane, toPane, allPanes, true);
                     fromPane = null;
                     toPane = null;
                 }
@@ -272,13 +272,15 @@ public class ChessfieldController implements Initializable {
         return allPanes;
     }
 
-    private void makeMove(Pane from, Pane to, Pane[] allPanes) {
+    private void makeMove(Pane from, Pane to, Pane[] allPanes, Boolean sendMove) {
         if (moveIsPossible(from, to, allPanes)) {
             System.out.println("from: " + from.getId() + " to: " + to.getId());
-            try {
-                Communication.sendAMessage(from.getId() + " " + to.getId(), startPageController.ipOfClient);
-            } catch (Exception e) {
-                e.printStackTrace();
+            if (sendMove) {
+                try {
+                    Communication.sendAMessage(from.getId() + " " + to.getId(), startPageController.ipOfClient);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
             if (to.getId().contains("-")) {
                 to.setId(to.getId().split("-")[0] + "-" + from.getId().split("-")[1] + "-" + from.getId().split("-")[2]);
@@ -586,7 +588,7 @@ public class ChessfieldController implements Initializable {
 
         if (fromPane != null && toPane != null) {
             ChessfieldController chessfieldController = new ChessfieldController();
-            chessfieldController.makeMove(aFromPane, aToPane, allThePanes);
+            chessfieldController.makeMove(aFromPane, aToPane, allThePanes, false);
         }
     }
 }

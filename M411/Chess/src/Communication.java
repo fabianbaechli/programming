@@ -44,7 +44,7 @@ public class Communication {
             String s;
             try {
                 while ((s = in.readLine()) != null) {
-                    System.out.println("received string: " + s);
+                    System.out.println("received handshake package: " + s);
 
                     timeOfFirstPackageOfClient = Long.parseLong(s.split(",")[1]);
 
