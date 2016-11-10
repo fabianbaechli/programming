@@ -25,8 +25,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="28" selection-end-column="42" />
+            <state relative-caret-position="405">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,11 +37,12 @@
       <file leaf-file-name="ChessfieldController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ChessfieldController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="590" column="80" selection-start-line="590" selection-start-column="80" selection-end-line="590" selection-end-column="80" />
+            <state relative-caret-position="418">
+              <caret line="325" column="73" selection-start-line="325" selection-start-column="73" selection-end-line="325" selection-end-column="73" />
               <folding>
+                <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
+                <element signature="method#firstDraw#0;class#ChessfieldController#0" expanded="false" />
                 <element signature="e#3488#3556#0" expanded="false" />
-                <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
                 <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
                 <element signature="method#rookLogic#0;class#ChessfieldController#0" expanded="false" />
                 <element signature="method#knightLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -50,6 +51,7 @@
                 <element signature="method#kingLogic#0;class#ChessfieldController#0" expanded="false" />
                 <element signature="method#setImages#0;class#ChessfieldController#0" expanded="false" />
                 <element signature="method#backgroundImageBuilder#0;class#ChessfieldController#0" expanded="false" />
+                <element signature="method#receivedMove#0;class#ChessfieldController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -58,12 +60,10 @@
       <file leaf-file-name="Communication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Communication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
+            <state relative-caret-position="1920">
+              <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3967#4327#0" expanded="true" />
-                <element signature="e#4326#4327#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,21 +72,8 @@
       <file leaf-file-name="startPageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/startPageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="48" column="61" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Chessfield.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out/production/Chess/Chessfield.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="285">
+              <caret line="70" column="70" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -112,10 +99,10 @@
       <list>
         <option value="$PROJECT_DIR$/out/production/Chess/style.css" />
         <option value="$PROJECT_DIR$/out/production/Chess/Chessfield.fxml" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/out/production/Chess/ConnectWindow.fxml" />
         <option value="$PROJECT_DIR$/src/startPageController.java" />
         <option value="$PROJECT_DIR$/src/Communication.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/ChessfieldController.java" />
       </list>
     </option>
@@ -143,7 +130,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -156,7 +143,45 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -643,12 +668,12 @@
       <workItem from="1478705724340" duration="6000" />
       <workItem from="1478707150644" duration="9046000" />
       <workItem from="1478765179934" duration="18000" />
-      <workItem from="1478765211203" duration="1463000" />
+      <workItem from="1478765211203" duration="3799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104216000" />
+    <option name="totallyTimeSpent" value="106552000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="125" y="22" width="1214" height="877" extended-state="0" />
@@ -672,7 +697,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24943988" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39851484" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38737625" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294893" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -695,15 +720,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Communication.java</url>
-          <line>89</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="33" />
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -712,131 +729,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/beans/property/StringPropertyBase.java" />
-    <entry file="file://$PROJECT_DIR$/out/production/Chess/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/Chess/Chessfield.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="4230">
-          <caret line="282" column="25" selection-start-line="282" selection-start-column="25" selection-end-line="282" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChessfieldController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="478" column="28" selection-start-line="478" selection-start-column="28" selection-end-line="478" selection-end-column="28" />
-          <folding>
-            <element signature="e#3488#3556#0" expanded="false" />
-            <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#rookLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#knightLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#bishopLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#queenLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#kingLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#setImages#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#backgroundImageBuilder#0;class#ChessfieldController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChessfieldController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#3488#3556#0" expanded="false" />
-            <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#rookLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#knightLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#bishopLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#queenLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#kingLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#setImages#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#backgroundImageBuilder#0;class#ChessfieldController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/Chess/Chessfield.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="4305">
-          <caret line="287" column="25" selection-start-line="287" selection-start-column="25" selection-end-line="287" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChessfieldController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#3488#3556#0" expanded="false" />
-            <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#rookLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#knightLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#bishopLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#queenLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#kingLogic#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#setImages#0;class#ChessfieldController#0" expanded="false" />
-            <element signature="method#backgroundImageBuilder#0;class#ChessfieldController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/Chess/Chessfield.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="4305">
-          <caret line="287" column="25" selection-start-line="287" selection-start-column="25" selection-end-line="287" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -882,8 +774,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
+            <element signature="method#firstDraw#0;class#ChessfieldController#0" expanded="false" />
             <element signature="e#3488#3556#0" expanded="false" />
-            <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#rookLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#knightLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -892,6 +785,7 @@
             <element signature="method#kingLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#setImages#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#backgroundImageBuilder#0;class#ChessfieldController#0" expanded="false" />
+            <element signature="method#receivedMove#0;class#ChessfieldController#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -933,8 +827,9 @@
         <state relative-caret-position="405">
           <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
           <folding>
+            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
+            <element signature="method#firstDraw#0;class#ChessfieldController#0" expanded="false" />
             <element signature="e#3488#3556#0" expanded="false" />
-            <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#rookLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#knightLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -943,6 +838,7 @@
             <element signature="method#kingLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#setImages#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#backgroundImageBuilder#0;class#ChessfieldController#0" expanded="false" />
+            <element signature="method#receivedMove#0;class#ChessfieldController#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -972,8 +868,9 @@
         <state relative-caret-position="405">
           <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
           <folding>
+            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
+            <element signature="method#firstDraw#0;class#ChessfieldController#0" expanded="false" />
             <element signature="e#3488#3556#0" expanded="false" />
-            <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#rookLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#knightLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -982,6 +879,7 @@
             <element signature="method#kingLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#setImages#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#backgroundImageBuilder#0;class#ChessfieldController#0" expanded="false" />
+            <element signature="method#receivedMove#0;class#ChessfieldController#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1011,8 +909,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
+            <element signature="method#firstDraw#0;class#ChessfieldController#0" expanded="false" />
             <element signature="e#3488#3556#0" expanded="false" />
-            <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#rookLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#knightLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -1021,6 +920,7 @@
             <element signature="method#kingLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#setImages#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#backgroundImageBuilder#0;class#ChessfieldController#0" expanded="false" />
+            <element signature="method#receivedMove#0;class#ChessfieldController#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1033,9 +933,7 @@
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/beans/property/BooleanPropertyBase.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/css/StyleableBooleanProperty.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/scene/layout/Region.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/scene/control/Labeled.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/scene/layout/Pane.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/com/sun/glass/ui/InvokeLaterDispatcher.java" />
     <entry file="file://$PROJECT_DIR$/out/production/Chess/style.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -1071,53 +969,185 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/event/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/event/ActionEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding>
+            <element signature="e#1698#1699#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/animation/KeyFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding>
+            <element signature="e#3238#3239#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/animation/Timeline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+          <folding>
+            <element signature="e#5683#5684#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/scene/Parent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="567" column="0" selection-start-line="567" selection-start-column="0" selection-end-line="567" selection-end-column="0" />
+          <folding>
+            <element signature="e#23772#23773#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/scene/layout/Pane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+          <folding>
+            <element signature="e#4340#4341#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/scene/Node.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="9037" column="0" selection-start-line="9037" selection-start-column="0" selection-end-line="9037" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
-          <caret line="980" column="0" selection-start-line="980" selection-start-column="0" selection-end-line="980" selection-end-column="0" />
+          <caret line="544" column="0" selection-start-line="544" selection-start-column="0" selection-end-line="544" selection-end-column="0" />
+          <folding>
+            <element signature="e#39846#39847#0" expanded="false" />
+            <element signature="e#39901#39902#0" expanded="false" />
+            <element signature="e#74731#74732#0" expanded="false" />
+            <element signature="e#74764#74765#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/animation/AnimationAccessorImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#599#600#0" expanded="false" />
+            <element signature="e#653#654#0" expanded="false" />
+            <element signature="e#888#889#0" expanded="false" />
+            <element signature="e#1011#1012#0" expanded="false" />
+            <element signature="e#1064#1065#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/beans/property/ReadOnlyObjectPropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="e#1722#1723#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/beans/property/ReadOnlyDoublePropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#1664#1665#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/stage/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="1290" column="0" selection-start-line="1290" selection-start-column="0" selection-end-line="1290" selection-end-column="0" />
+          <folding>
+            <element signature="e#45880#45881#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/javafx-src.zip!/javafx/animation/Animation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="188" column="0" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/startPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="70" column="70" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="28" selection-end-column="42" />
+        <state relative-caret-position="405">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/startPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="48" column="61" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Communication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
+        <state relative-caret-position="1920">
+          <caret line="134" column="0" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3967#4327#0" expanded="true" />
-            <element signature="e#4326#4327#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ChessfieldController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="590" column="80" selection-start-line="590" selection-start-column="80" selection-end-line="590" selection-end-column="80" />
+        <state relative-caret-position="418">
+          <caret line="325" column="73" selection-start-line="325" selection-start-column="73" selection-end-line="325" selection-end-column="73" />
           <folding>
+            <element signature="method#initialize#0;class#ChessfieldController#0" expanded="false" />
+            <element signature="method#firstDraw#0;class#ChessfieldController#0" expanded="false" />
             <element signature="e#3488#3556#0" expanded="false" />
-            <element signature="method#moveIsPossible#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#pawnLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#rookLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#knightLogic#0;class#ChessfieldController#0" expanded="false" />
@@ -1126,6 +1156,7 @@
             <element signature="method#kingLogic#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#setImages#0;class#ChessfieldController#0" expanded="false" />
             <element signature="method#backgroundImageBuilder#0;class#ChessfieldController#0" expanded="false" />
+            <element signature="method#receivedMove#0;class#ChessfieldController#0" expanded="false" />
           </folding>
         </state>
       </provider>

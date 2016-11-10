@@ -273,7 +273,8 @@ public class ChessfieldController implements Initializable {
     }
 
     private void makeMove(Pane from, Pane to, Pane[] allPanes, Boolean sendMove) {
-        if (moveIsPossible(from, to, allPanes)) {
+        Boolean receivedMove =! sendMove;
+        if (moveIsPossible(from, to, allPanes, receivedMove)) {
             System.out.println("from: " + from.getId() + " to: " + to.getId());
             if (sendMove) {
                 try {
@@ -302,7 +303,7 @@ public class ChessfieldController implements Initializable {
     }
 
     @NotNull
-    private Boolean moveIsPossible(Pane from, Pane to, Pane[] allPanes) {
+    private Boolean moveIsPossible(Pane from, Pane to, Pane[] allPanes, Boolean receivedMove) {
         fromColor = from.getId().split("-")[1];
         fromNumber = Character.getNumericValue(from.getId().charAt(1));
         toNumber = Character.getNumericValue(to.getId().charAt(1));
@@ -314,7 +315,8 @@ public class ChessfieldController implements Initializable {
             toColor = "noColor";
         }
 
-        if (colorOfPlayer.matches(colorOfRound)) {
+        if (colorOfPlayer.matches(colorOfRound) && (!receivedMove) ||
+                (!colorOfPlayer.matches(colorOfRound) && (receivedMove))) {
             if (fromColor.equals(colorOfPlayer)) {
                 //Have to change this in future for rochade
                 if (!fromColor.matches(toColor)) {
@@ -586,7 +588,7 @@ public class ChessfieldController implements Initializable {
         }
         System.out.println(Arrays.toString(allThePanes));
 
-        if (fromPane != null && toPane != null) {
+        if (aFromPane != null && aToPane != null) {
             ChessfieldController chessfieldController = new ChessfieldController();
             chessfieldController.makeMove(aFromPane, aToPane, allThePanes, false);
         }
