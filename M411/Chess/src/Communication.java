@@ -16,7 +16,6 @@ public class Communication {
         return timeOfFirstPackageOfClient;
     }
 
-
     private Communication(String ipOfClient, long timeOfFirstPackageOfClient) {
         this.ipOfClient = ipOfClient;
         this.timeOfFirstPackageOfClient = timeOfFirstPackageOfClient;
@@ -96,9 +95,6 @@ public class Communication {
                     to = temp[1];
                     ChessfieldController.receivedMove(from, to);
 
-                    System.out.println(from);
-                    System.out.println(to);
-
                     out.flush();
                 }
             } catch (Exception e) {
@@ -130,7 +126,7 @@ public class Communication {
         Socket clientSocket = new Socket(ipOfClient, 4433);
         DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());
         outToServer.writeBytes(message);
-        System.out.println("sent " + message + " to " + ipOfClient);
+        System.out.println("Sent " + message + " to: " + ipOfClient);
         clientSocket.close();
     }
 }

@@ -251,7 +251,6 @@ public class ChessfieldController implements Initializable {
         //Sets a Mouse Click Handler for every tile
         for (Pane aPane : allPanes) {
             aPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                System.out.println(aPane.getId());
                 if ((aPane.getId().contains("White") ||
                         aPane.getId().contains("Black")) &&
                         fromPane == null) {
@@ -444,12 +443,12 @@ public class ChessfieldController implements Initializable {
         if ((fromChar.charAt(0) + 2 == toChar.charAt(0) ||
                 toChar.charAt(0) + 2 == fromChar.charAt(0)) &&
                 (fromNumber + 1 == toNumber ||
-                toNumber + 1 == fromNumber)) {
+                        toNumber + 1 == fromNumber)) {
             return true;
         } else if ((fromChar.charAt(0) + 1 == toChar.charAt(0) ||
                 toChar.charAt(0) + 1 == fromChar.charAt(0)) &&
                 (fromNumber + 2 == toNumber ||
-                toNumber + 2 == fromNumber)) {
+                        toNumber + 2 == fromNumber)) {
             return true;
         }
         return false;
@@ -464,29 +463,22 @@ public class ChessfieldController implements Initializable {
                     for (int toNumberInArray = 0; toNumberInArray < allPanes.length; toNumberInArray++) {
                         if (allPanes[toNumberInArray].getId().equals(to.getId())) {
 
-                            if (toNumberInArray > fromNumberInArray && colorOfPlayer.equals("White")) {
-                                for (int i = fromNumberInArray + 9; i < toNumberInArray; i += 9) {
+                            int max = Math.max(fromNumberInArray, toNumberInArray);
+                            int min = Math.min(fromNumberInArray, toNumberInArray);
+                            double seven = 7;
+                            double nine = 9;
+                            double sevenResult = (max - min) / seven;
+                            double nineResult = (max - min) / nine;
+
+                            if ((sevenResult % 1 == 0)) {
+                                for (int i = min + 7; i < max; i += 7) {
                                     if (allPanes[i].getId().contains("Black") || allPanes[i].getId().contains("White")) {
                                         System.out.println("Couldn't make move because: " + allPanes[i].getId());
                                         return false;
                                     }
                                 }
-                            } else if (fromNumberInArray > toNumberInArray && colorOfPlayer.equals("White")) {
-                                for (int i = toNumberInArray + 7; i < fromNumberInArray; i += 7) {
-                                    if (allPanes[i].getId().contains("Black") || allPanes[i].getId().contains("White")) {
-                                        System.out.println("Couldn't make move because: " + allPanes[i].getId());
-                                        return false;
-                                    }
-                                }
-                            } else if (toNumberInArray > fromNumberInArray && colorOfPlayer.equals("Black")) {
-                                for (int i = toNumberInArray - 7; i > fromNumberInArray; i -= 7) {
-                                    if (allPanes[i].getId().contains("Black") || allPanes[i].getId().contains("White")) {
-                                        System.out.println("Couldn't make move because: " + allPanes[i].getId());
-                                        return false;
-                                    }
-                                }
-                            } else if (fromNumberInArray > toNumberInArray && colorOfPlayer.equals("Black")) {
-                                for (int i = fromNumberInArray - 9; i > toNumberInArray; i -= 9) {
+                            } else if ((nineResult % 1 == 0)) {
+                                for (int i = min + 9; i < max; i += 9) {
                                     if (allPanes[i].getId().contains("Black") || allPanes[i].getId().contains("White")) {
                                         System.out.println("Couldn't make move because: " + allPanes[i].getId());
                                         return false;
@@ -521,8 +513,7 @@ public class ChessfieldController implements Initializable {
     private static Boolean kingLogic() {
         int charDif = Math.max((int) fromChar.charAt(0), (int) toChar.charAt(0)) - Math.min((int) fromChar.charAt(0), (int) toChar.charAt(0));
         int numberDif = Math.max(fromNumber, toNumber) - Math.min(fromNumber, toNumber);
-        System.out.println(charDif);
-        System.out.println(numberDif);
+
         return charDif <= 1 && numberDif <= 1;
     }
 
@@ -575,7 +566,6 @@ public class ChessfieldController implements Initializable {
                 aToPane = aPane;
             }
         }
-        System.out.println(Arrays.toString(allThePanes));
 
         if (aFromPane != null && aToPane != null) {
             ChessfieldController chessfieldController = new ChessfieldController();

@@ -72,7 +72,6 @@ public class startPageController implements Initializable {
                         count++;
                     } catch (Exception e) {
                         System.out.println("Package not delivered");
-                        Label1.setText("Package not delivered");
                     }
                 }
 
