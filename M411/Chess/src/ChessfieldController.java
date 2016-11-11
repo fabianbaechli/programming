@@ -1,4 +1,3 @@
-
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -41,6 +40,8 @@ public class ChessfieldController implements Initializable {
     private static int fromNumber;
     private static int toNumber;
 
+    private static Boolean playsWithItself = false;
+
     @Override
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
         //Opens the socket 4433 to incoming messages
@@ -61,6 +62,7 @@ public class ChessfieldController implements Initializable {
         } else if ((startPageController.timeOfFirstPackage < startPageController.timeOfFirstPackageOfClient)) {
             colorOfPlayer = "Black";
         } else if (startPageController.timeOfFirstPackage == startPageController.timeOfFirstPackageOfClient) {
+            playsWithItself = true;
             colorOfPlayer = "White";
         }
 
@@ -291,8 +293,14 @@ public class ChessfieldController implements Initializable {
             }
             if (colorOfRound.equals("Black")) {
                 colorOfRound = "White";
+                if (playsWithItself) {
+                    colorOfPlayer = "White";
+                }
             } else {
                 colorOfRound = "Black";
+                if (playsWithItself) {
+                    colorOfPlayer = "Black";
+                }
             }
             roundCount++;
             System.out.println("Made move");
