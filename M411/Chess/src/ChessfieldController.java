@@ -1,5 +1,4 @@
 import java.net.URL;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 import javafx.fxml.*;
@@ -8,6 +7,7 @@ import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+
 
 public class ChessfieldController implements Initializable {
     @FXML
@@ -23,13 +23,13 @@ public class ChessfieldController implements Initializable {
             Label13, Label14, Label15, Label16, Label17, Label18,
             Label19, Label20, Label21, Label22, Label23, Label24,
             Label25, Label26, Label27, Label28, Label29, Label30,
-            Label31, Label32;
+            Label31, Label32, Label33, Label34;
 
     private static Pane fromPane;
     private static Pane toPane;
     private static Pane[] allThePanes;
 
-    private static String colorOfRound = "White";
+    private static String colorOfRound = "Black";
     private static String colorOfPlayer;
     private static String fromColor;
     private static String toColor;
@@ -63,7 +63,7 @@ public class ChessfieldController implements Initializable {
             colorOfPlayer = "Black";
         } else if (startPageController.timeOfFirstPackage == startPageController.timeOfFirstPackageOfClient) {
             playsWithItself = true;
-            colorOfPlayer = "White";
+            colorOfPlayer = "Black";
         }
 
         allThePanes = firstDraw();
@@ -181,67 +181,23 @@ public class ChessfieldController implements Initializable {
 
         } else {
             int count = 0;
-            for (int i = 8; i > 0; i--) {
+            Character setChar = 'a';
+            for (int i = 64; i > 0; i--) {
                 count++;
-                if (!allPanes[i - 1].getId().contains("White") &&
-                        !allPanes[i - 1].getId().contains("Black")) {
-                    allPanes[i - 1].setId("h" + count);
+                if (i == 57 ||
+                        i == 49 ||
+                        i == 41 ||
+                        i == 33 ||
+                        i == 25 ||
+                        i == 17 ||
+                        i == 9) {
+                    count = 0;
+                    setChar = (char)(setChar + 1);
+                    System.out.println((int)setChar);
                 }
-            }
-            count = 0;
-            for (int i = 16; i > 8; i--) {
-                count++;
                 if (!allPanes[i - 1].getId().contains("White") &&
                         !allPanes[i - 1].getId().contains("Black")) {
-                    allPanes[i - 1].setId("g" + count);
-                }
-            }
-            count = 0;
-            for (int i = 24; i > 16; i--) {
-                count++;
-                if (!allPanes[i - 1].getId().contains("White") &&
-                        !allPanes[i - 1].getId().contains("Black")) {
-                    allPanes[i - 1].setId("f" + count);
-                }
-            }
-            count = 0;
-            for (int i = 32; i > 24; i--) {
-                count++;
-                if (!allPanes[i - 1].getId().contains("White") &&
-                        !allPanes[i - 1].getId().contains("Black")) {
-                    allPanes[i - 1].setId("e" + count);
-                }
-            }
-            count = 0;
-            for (int i = 40; i > 32; i--) {
-                count++;
-                if (!allPanes[i - 1].getId().contains("White") &&
-                        !allPanes[i - 1].getId().contains("Black")) {
-                    allPanes[i - 1].setId("d" + count);
-                }
-            }
-            count = 0;
-            for (int i = 48; i > 40; i--) {
-                count++;
-                if (!allPanes[i - 1].getId().contains("White") &&
-                        !allPanes[i - 1].getId().contains("Black")) {
-                    allPanes[i - 1].setId("c" + count);
-                }
-            }
-            count = 0;
-            for (int i = 56; i > 48; i--) {
-                count++;
-                if (!allPanes[i - 1].getId().contains("White") &&
-                        !allPanes[i - 1].getId().contains("Black")) {
-                    allPanes[i - 1].setId("b" + count);
-                }
-            }
-            count = 0;
-            for (int i = 64; i > 56; i--) {
-                count++;
-                if (!allPanes[i - 1].getId().contains("White") &&
-                        !allPanes[i - 1].getId().contains("Black")) {
-                    allPanes[i - 1].setId("a" + count);
+                    allPanes[i - 1].setId(Character.toString(setChar) + count);
                 }
             }
             //Sets the correct raster numbers and chars for black
@@ -253,6 +209,7 @@ public class ChessfieldController implements Initializable {
         //Sets a Mouse Click Handler for every tile
         for (Pane aPane : allPanes) {
             aPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                System.out.println(aPane.getId());
                 if ((aPane.getId().contains("White") ||
                         aPane.getId().contains("Black")) &&
                         fromPane == null) {
@@ -272,8 +229,8 @@ public class ChessfieldController implements Initializable {
     }
 
     private void makeMove(Pane from, Pane to, Pane[] allPanes, Boolean sendMove) {
-        if (moveIsPossible(from, to, allPanes) ||
-                !sendMove) {
+
+        if (moveIsPossible(from, to, allPanes) || !sendMove) {
             System.out.println("from: " + from.getId() + " to: " + to.getId());
             if (sendMove) {
                 try {
@@ -293,16 +250,19 @@ public class ChessfieldController implements Initializable {
             }
             if (colorOfRound.equals("Black")) {
                 colorOfRound = "White";
+                Label33.setText("White's turn");
                 if (playsWithItself) {
                     colorOfPlayer = "White";
                 }
             } else {
                 colorOfRound = "Black";
+                Label33.setText("Black's turn");
                 if (playsWithItself) {
                     colorOfPlayer = "Black";
                 }
             }
             roundCount++;
+            Label34.setText(Label34.getText().split(" ")[0] + " " + roundCount);
             System.out.println("Made move");
         }
     }

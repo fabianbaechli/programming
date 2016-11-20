@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
@@ -10,7 +15,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChessfieldController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChessfieldController">
    <children>
       <Pane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -380,40 +385,40 @@
             <Insets bottom="50.0" left="730.0" right="5.0" top="50.0" />
          </StackPane.margin>
          <children>
-            <Label fx:id="Label33" layoutX="70.0" layoutY="27.0" text="White's Turn" />
-            <Label fx:id="Label34" layoutX="81.0" layoutY="52.0" text="Round: 0" />
-            <Pane id="out-a2" layoutX="6.0" layoutY="99.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-e2" layoutX="57.0" layoutY="99.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-e1" layoutX="159.0" layoutY="99.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-a1" layoutX="108.0" layoutY="99.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-b1" layoutX="108.0" layoutY="150.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-f1" layoutX="159.0" layoutY="150.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-f2" layoutX="57.0" layoutY="150.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-b2" layoutX="6.0" layoutY="150.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-d2" layoutX="6.0" layoutY="252.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-h2" layoutX="57.0" layoutY="252.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-h1" layoutX="159.0" layoutY="252.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-d1" layoutX="108.0" layoutY="252.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-c1" layoutX="108.0" layoutY="201.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-g1" layoutX="159.0" layoutY="201.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-g2" layoutX="57.0" layoutY="201.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-c2" layoutX="6.0" layoutY="201.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-d8" layoutX="108.0" layoutY="349.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-h8" layoutX="159.0" layoutY="349.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-h7" layoutX="57.0" layoutY="349.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-d7" layoutX="6.0" layoutY="349.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-a7" layoutX="6.0" layoutY="502.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-e7" layoutX="57.0" layoutY="502.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-e8" layoutX="159.0" layoutY="502.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-a8" layoutX="108.0" layoutY="502.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-c7" layoutX="6.0" layoutY="400.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-g7" layoutX="57.0" layoutY="400.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-g8" layoutX="159.0" layoutY="400.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-c8" layoutX="108.0" layoutY="400.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-b8" layoutX="108.0" layoutY="451.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-f8" layoutX="159.0" layoutY="451.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-f7" layoutX="57.0" layoutY="451.0" prefHeight="50.0" prefWidth="50.0" />
-            <Pane id="out-b7" layoutX="6.0" layoutY="451.0" prefHeight="50.0" prefWidth="50.0" />
+            <Label id="Label33" fx:id="Label33" layoutX="70.0" layoutY="27.0" text="White's Turn" />
+            <Label id="Lablel34" fx:id="Label34" layoutX="81.0" layoutY="52.0" text="Round: " />
+            <Pane id="white-pawn" fx:id="out_a2" layoutX="6.0" layoutY="99.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-pawn" fx:id="out_h2" layoutX="57.0" layoutY="99.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-bishop" fx:id="out_f1" layoutX="159.0" layoutY="99.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-rook" fx:id="out_h1" layoutX="108.0" layoutY="99.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-rook" fx:id="out_a1" layoutX="108.0" layoutY="150.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-bishop" fx:id="out_c1" layoutX="159.0" layoutY="150.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-pawn" fx:id="out_g2" layoutX="57.0" layoutY="150.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-pawn" fx:id="out_b2" layoutX="6.0" layoutY="150.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-pawn" fx:id="out_d2" layoutX="6.0" layoutY="252.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-pawn" fx:id="out_e2" layoutX="57.0" layoutY="252.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-king" fx:id="out_e1" layoutX="159.0" layoutY="252.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-knight" fx:id="out_b1" layoutX="108.0" layoutY="252.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-knight" fx:id="out_g1" layoutX="108.0" layoutY="201.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-queen" fx:id="out_d1" layoutX="159.0" layoutY="201.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-pawn" fx:id="out_f2" layoutX="57.0" layoutY="201.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="white-pawn" fx:id="out_c2" layoutX="6.0" layoutY="201.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-knight" fx:id="out_b8" layoutX="108.0" layoutY="349.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-king" fx:id="out_e8" layoutX="159.0" layoutY="349.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-pawn" fx:id="out_e7" layoutX="57.0" layoutY="349.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-pawn" fx:id="out_d7" layoutX="6.0" layoutY="349.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-pawn" fx:id="out_a7" layoutX="6.0" layoutY="502.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-pawn" fx:id="out_h7" layoutX="57.0" layoutY="502.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-bishop" fx:id="out_f8" layoutX="159.0" layoutY="502.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-rook" fx:id="out_h8" layoutX="108.0" layoutY="502.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-pawn" fx:id="out_c7" layoutX="6.0" layoutY="400.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-pawn" fx:id="out_f7" layoutX="57.0" layoutY="400.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-queen" fx:id="out_d8" layoutX="159.0" layoutY="400.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-knight" fx:id="out_g8" layoutX="108.0" layoutY="400.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-rook" fx:id="out_a8" layoutX="108.0" layoutY="451.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-bishop" fx:id="out_c8" layoutX="159.0" layoutY="451.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-pawn" fx:id="out_g7" layoutX="57.0" layoutY="451.0" prefHeight="50.0" prefWidth="50.0" />
+            <Pane id="black-pawn" fx:id="out_b7" layoutX="6.0" layoutY="451.0" prefHeight="50.0" prefWidth="50.0" />
          </children>
       </Pane>
    </children>
