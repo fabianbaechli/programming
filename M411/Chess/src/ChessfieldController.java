@@ -29,7 +29,7 @@ public class ChessfieldController implements Initializable {
     private static Pane toPane;
     private static Pane[] allThePanes;
 
-    private static String colorOfRound = "Black";
+    private static String colorOfRound = "White";
     private static String colorOfPlayer;
     private static String fromColor;
     private static String toColor;
@@ -63,7 +63,7 @@ public class ChessfieldController implements Initializable {
             colorOfPlayer = "Black";
         } else if (startPageController.timeOfFirstPackage == startPageController.timeOfFirstPackageOfClient) {
             playsWithItself = true;
-            colorOfPlayer = "Black";
+            colorOfPlayer = "White";
         }
 
         allThePanes = firstDraw();
@@ -363,43 +363,26 @@ public class ChessfieldController implements Initializable {
                 toPosition = i;
             }
         }
+        int max = Math.max(fromPosition, toPosition);
+        int min = Math.min(fromPosition, toPosition);
+
         if (fromChar.equals(toChar)) {
-            if (fromPosition < toPosition) {
-                for (int i = fromPosition + 1; i <= toPosition - 1; i++) {
-                    if (allPanes[i].getId().contains("White") ||
-                            allPanes[i].getId().contains("Black")) {
-                        System.out.println(allPanes[i].getId() + " In way");
-                        return false;
-                    }
-                }
-                return true;
-            } else if (fromPosition > toPosition) {
-                for (int i = toPosition + 1; i <= fromPosition - 1; i++) {
-                    if (allPanes[i].getId().contains("White") ||
-                            allPanes[i].getId().contains("Black")) {
-                        System.out.println(allPanes[i].getId() + " In way");
-                        return false;
-                    }
+            for (int i = min + 1; i <= max - 1; i++) {
+                System.out.println("Checked Panel: " + allPanes[i].getId());
+                if (allPanes[i].getId().contains("White") ||
+                        allPanes[i].getId().contains("Black")) {
+                    System.out.println(allPanes[i].getId() + " In way");
+                    return false;
                 }
             }
             return true;
         } else if (fromNumber == toNumber) {
-            if (fromPosition < toPosition) {
-                for (int i = fromPosition + 8; i <= toPosition - 8; i += 8) {
-                    if (allPanes[i].getId().contains("White") ||
-                            allPanes[i].getId().contains("Black")) {
-                        System.out.println(allPanes[i].getId() + " In way");
-                        return false;
-                    }
-                }
-                return true;
-            } else if (fromPosition > toPosition) {
-                for (int i = toPosition + 8; i <= fromPosition - 8; i += 8) {
-                    if (allPanes[i].getId().contains("White") ||
-                            allPanes[i].getId().contains("Black")) {
-                        System.out.println(allPanes[i].getId() + " In way");
-                        return false;
-                    }
+            for (int i = min + 8; i <= max - 8; i += 8) {
+                System.out.println("Checked Panel: " + allPanes[i].getId());
+                if (allPanes[i].getId().contains("White") ||
+                        allPanes[i].getId().contains("Black")) {
+                    System.out.println(allPanes[i].getId() + " In way");
+                    return false;
                 }
             }
             return true;
