@@ -80,7 +80,7 @@ public class startPageController implements Initializable {
                 try {
                     root = FXMLLoader.load(Main.class.getResource("Chessfield.fxml"));
                     Stage stage = new Stage();
-                    stage.setTitle("Chess Application // 2016 Fabian Bächli");
+                    stage.setTitle("♞ // 2016 Fabian Bächli");
                     stage.setScene(new Scene(root));
                     stage.setMinHeight(770);
                     stage.setMinWidth(950);

@@ -4,8 +4,8 @@ import java.lang.*;
 import java.io.*;
 
 public class Main {
-    private static String inputFilePath = "/inputfile.txt";
-    private static String outputFilePath = "/outputfile.txt";
+    private static String inputFilePath = "/Users/Fabian/Desktop/Export.sql";
+    private static String outputFilePath = "/Users/Fabian/Desktop/Output.sql";
 
     public static void main(String[] args) {
         GUI.mainGui();

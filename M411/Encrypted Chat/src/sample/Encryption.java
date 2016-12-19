@@ -1,12 +1,12 @@
 package sample;
 
-//Included in External Library
 import org.apache.commons.codec.binary.Base64;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.MessageDigest;
+
 
 public class Encryption {
     public static String encrypt(String key, String initVector, String value) {
